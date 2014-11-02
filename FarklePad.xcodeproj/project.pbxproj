@@ -1,0 +1,439 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D2B7DA8F1A06A65E00015415 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B7DA8E1A06A65E00015415 /* AppDelegate.swift */; };
+		D2B7DA921A06A65E00015415 /* FarklePad.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2B7DA901A06A65E00015415 /* FarklePad.xcdatamodeld */; };
+		D2B7DA941A06A65E00015415 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B7DA931A06A65E00015415 /* ViewController.swift */; };
+		D2B7DA971A06A65E00015415 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2B7DA951A06A65E00015415 /* Main.storyboard */; };
+		D2B7DA991A06A65E00015415 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2B7DA981A06A65E00015415 /* Images.xcassets */; };
+		D2B7DA9C1A06A65E00015415 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2B7DA9A1A06A65E00015415 /* LaunchScreen.xib */; };
+		D2B7DAA81A06A65E00015415 /* FarklePadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B7DAA71A06A65E00015415 /* FarklePadTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D2B7DAA21A06A65E00015415 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2B7DA811A06A65E00015415 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2B7DA881A06A65E00015415;
+			remoteInfo = FarklePad;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D2B7DA891A06A65E00015415 /* FarklePad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FarklePad.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2B7DA8D1A06A65E00015415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2B7DA8E1A06A65E00015415 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D2B7DA911A06A65E00015415 /* FarklePad.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FarklePad.xcdatamodel; sourceTree = "<group>"; };
+		D2B7DA931A06A65E00015415 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D2B7DA961A06A65E00015415 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D2B7DA981A06A65E00015415 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D2B7DA9B1A06A65E00015415 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		D2B7DAA11A06A65E00015415 /* FarklePadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FarklePadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2B7DAA61A06A65E00015415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2B7DAA71A06A65E00015415 /* FarklePadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarklePadTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2B7DA861A06A65E00015415 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2B7DA9E1A06A65E00015415 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D2B7DA801A06A65E00015415 = {
+			isa = PBXGroup;
+			children = (
+				D2B7DA8B1A06A65E00015415 /* FarklePad */,
+				D2B7DAA41A06A65E00015415 /* FarklePadTests */,
+				D2B7DA8A1A06A65E00015415 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D2B7DA8A1A06A65E00015415 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2B7DA891A06A65E00015415 /* FarklePad.app */,
+				D2B7DAA11A06A65E00015415 /* FarklePadTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D2B7DA8B1A06A65E00015415 /* FarklePad */ = {
+			isa = PBXGroup;
+			children = (
+				D2B7DA8E1A06A65E00015415 /* AppDelegate.swift */,
+				D2B7DA931A06A65E00015415 /* ViewController.swift */,
+				D2B7DA951A06A65E00015415 /* Main.storyboard */,
+				D2B7DA981A06A65E00015415 /* Images.xcassets */,
+				D2B7DA9A1A06A65E00015415 /* LaunchScreen.xib */,
+				D2B7DA901A06A65E00015415 /* FarklePad.xcdatamodeld */,
+				D2B7DA8C1A06A65E00015415 /* Supporting Files */,
+			);
+			path = FarklePad;
+			sourceTree = "<group>";
+		};
+		D2B7DA8C1A06A65E00015415 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D2B7DA8D1A06A65E00015415 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D2B7DAA41A06A65E00015415 /* FarklePadTests */ = {
+			isa = PBXGroup;
+			children = (
+				D2B7DAA71A06A65E00015415 /* FarklePadTests.swift */,
+				D2B7DAA51A06A65E00015415 /* Supporting Files */,
+			);
+			path = FarklePadTests;
+			sourceTree = "<group>";
+		};
+		D2B7DAA51A06A65E00015415 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D2B7DAA61A06A65E00015415 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D2B7DA881A06A65E00015415 /* FarklePad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2B7DAAB1A06A65E00015415 /* Build configuration list for PBXNativeTarget "FarklePad" */;
+			buildPhases = (
+				D2B7DA851A06A65E00015415 /* Sources */,
+				D2B7DA861A06A65E00015415 /* Frameworks */,
+				D2B7DA871A06A65E00015415 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FarklePad;
+			productName = FarklePad;
+			productReference = D2B7DA891A06A65E00015415 /* FarklePad.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D2B7DAA01A06A65E00015415 /* FarklePadTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2B7DAAE1A06A65E00015415 /* Build configuration list for PBXNativeTarget "FarklePadTests" */;
+			buildPhases = (
+				D2B7DA9D1A06A65E00015415 /* Sources */,
+				D2B7DA9E1A06A65E00015415 /* Frameworks */,
+				D2B7DA9F1A06A65E00015415 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D2B7DAA31A06A65E00015415 /* PBXTargetDependency */,
+			);
+			name = FarklePadTests;
+			productName = FarklePadTests;
+			productReference = D2B7DAA11A06A65E00015415 /* FarklePadTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D2B7DA811A06A65E00015415 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Out of Range Productions";
+				TargetAttributes = {
+					D2B7DA881A06A65E00015415 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					D2B7DAA01A06A65E00015415 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = D2B7DA881A06A65E00015415;
+					};
+				};
+			};
+			buildConfigurationList = D2B7DA841A06A65E00015415 /* Build configuration list for PBXProject "FarklePad" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D2B7DA801A06A65E00015415;
+			productRefGroup = D2B7DA8A1A06A65E00015415 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2B7DA881A06A65E00015415 /* FarklePad */,
+				D2B7DAA01A06A65E00015415 /* FarklePadTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D2B7DA871A06A65E00015415 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2B7DA971A06A65E00015415 /* Main.storyboard in Resources */,
+				D2B7DA9C1A06A65E00015415 /* LaunchScreen.xib in Resources */,
+				D2B7DA991A06A65E00015415 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2B7DA9F1A06A65E00015415 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2B7DA851A06A65E00015415 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2B7DA941A06A65E00015415 /* ViewController.swift in Sources */,
+				D2B7DA921A06A65E00015415 /* FarklePad.xcdatamodeld in Sources */,
+				D2B7DA8F1A06A65E00015415 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2B7DA9D1A06A65E00015415 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2B7DAA81A06A65E00015415 /* FarklePadTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D2B7DAA31A06A65E00015415 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2B7DA881A06A65E00015415 /* FarklePad */;
+			targetProxy = D2B7DAA21A06A65E00015415 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D2B7DA951A06A65E00015415 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D2B7DA961A06A65E00015415 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D2B7DA9A1A06A65E00015415 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D2B7DA9B1A06A65E00015415 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D2B7DAA91A06A65E00015415 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		D2B7DAAA1A06A65E00015415 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D2B7DAAC1A06A65E00015415 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FarklePad/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D2B7DAAD1A06A65E00015415 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FarklePad/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D2B7DAAF1A06A65E00015415 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FarklePadTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FarklePad.app/FarklePad";
+			};
+			name = Debug;
+		};
+		D2B7DAB01A06A65E00015415 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FarklePadTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FarklePad.app/FarklePad";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D2B7DA841A06A65E00015415 /* Build configuration list for PBXProject "FarklePad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2B7DAA91A06A65E00015415 /* Debug */,
+				D2B7DAAA1A06A65E00015415 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D2B7DAAB1A06A65E00015415 /* Build configuration list for PBXNativeTarget "FarklePad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2B7DAAC1A06A65E00015415 /* Debug */,
+				D2B7DAAD1A06A65E00015415 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D2B7DAAE1A06A65E00015415 /* Build configuration list for PBXNativeTarget "FarklePadTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2B7DAAF1A06A65E00015415 /* Debug */,
+				D2B7DAB01A06A65E00015415 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D2B7DA901A06A65E00015415 /* FarklePad.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D2B7DA911A06A65E00015415 /* FarklePad.xcdatamodel */,
+			);
+			currentVersion = D2B7DA911A06A65E00015415 /* FarklePad.xcdatamodel */;
+			path = FarklePad.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D2B7DA811A06A65E00015415 /* Project object */;
+}
