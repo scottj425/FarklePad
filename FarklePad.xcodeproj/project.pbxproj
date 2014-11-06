@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D21374D31A071C6700C35D36 /* SettingsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21374D21A071C6700C35D36 /* SettingsTable.swift */; };
+		D21374D51A071E6100C35D36 /* main.png in Resources */ = {isa = PBXBuildFile; fileRef = D21374D41A071E6100C35D36 /* main.png */; };
+		D21374D71A071F4900C35D36 /* dicecolorview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21374D61A071F4900C35D36 /* dicecolorview.swift */; };
+		D21374D91A0739CC00C35D36 /* StarGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21374D81A0739CC00C35D36 /* StarGameView.swift */; };
+		D21374DE1A07449600C35D36 /* dice_black.png in Resources */ = {isa = PBXBuildFile; fileRef = D21374DA1A07449600C35D36 /* dice_black.png */; };
+		D21374DF1A07449600C35D36 /* dice_kacki.png in Resources */ = {isa = PBXBuildFile; fileRef = D21374DB1A07449600C35D36 /* dice_kacki.png */; };
+		D21374E01A07449600C35D36 /* dice_light-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = D21374DC1A07449600C35D36 /* dice_light-blue.png */; };
+		D21374E11A07449600C35D36 /* dice_pink.png in Resources */ = {isa = PBXBuildFile; fileRef = D21374DD1A07449600C35D36 /* dice_pink.png */; };
+		D21374E51A07462B00C35D36 /* Lion.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D21374E41A07462B00C35D36 /* Lion.jpg */; };
+		D21374E71A07596300C35D36 /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21374E61A07596300C35D36 /* GameBoard.swift */; };
+		D21374EB1A08A61100C35D36 /* Farkle_beach_background.png in Resources */ = {isa = PBXBuildFile; fileRef = D21374E81A08A61100C35D36 /* Farkle_beach_background.png */; };
+		D21374EC1A08A61100C35D36 /* Farkle_sunset_background.png in Resources */ = {isa = PBXBuildFile; fileRef = D21374E91A08A61100C35D36 /* Farkle_sunset_background.png */; };
+		D21374ED1A08A61100C35D36 /* Farkle_Miami_beach_background.png in Resources */ = {isa = PBXBuildFile; fileRef = D21374EA1A08A61100C35D36 /* Farkle_Miami_beach_background.png */; };
 		D2B7DA8F1A06A65E00015415 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B7DA8E1A06A65E00015415 /* AppDelegate.swift */; };
 		D2B7DA921A06A65E00015415 /* FarklePad.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2B7DA901A06A65E00015415 /* FarklePad.xcdatamodeld */; };
 		D2B7DA941A06A65E00015415 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B7DA931A06A65E00015415 /* ViewController.swift */; };
@@ -27,6 +40,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D21374D21A071C6700C35D36 /* SettingsTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTable.swift; sourceTree = "<group>"; };
+		D21374D41A071E6100C35D36 /* main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main.png; sourceTree = "<group>"; };
+		D21374D61A071F4900C35D36 /* dicecolorview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dicecolorview.swift; sourceTree = "<group>"; };
+		D21374D81A0739CC00C35D36 /* StarGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarGameView.swift; sourceTree = "<group>"; };
+		D21374DA1A07449600C35D36 /* dice_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_black.png; sourceTree = "<group>"; };
+		D21374DB1A07449600C35D36 /* dice_kacki.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_kacki.png; sourceTree = "<group>"; };
+		D21374DC1A07449600C35D36 /* dice_light-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dice_light-blue.png"; sourceTree = "<group>"; };
+		D21374DD1A07449600C35D36 /* dice_pink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_pink.png; sourceTree = "<group>"; };
+		D21374E41A07462B00C35D36 /* Lion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Lion.jpg; sourceTree = "<group>"; };
+		D21374E61A07596300C35D36 /* GameBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
+		D21374E81A08A61100C35D36 /* Farkle_beach_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Farkle_beach_background.png; sourceTree = "<group>"; };
+		D21374E91A08A61100C35D36 /* Farkle_sunset_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Farkle_sunset_background.png; sourceTree = "<group>"; };
+		D21374EA1A08A61100C35D36 /* Farkle_Miami_beach_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Farkle_Miami_beach_background.png; sourceTree = "<group>"; };
 		D2B7DA891A06A65E00015415 /* FarklePad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FarklePad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B7DA8D1A06A65E00015415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2B7DA8E1A06A65E00015415 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +84,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D21374EE1A08A62A00C35D36 /* Backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				D21374E81A08A61100C35D36 /* Farkle_beach_background.png */,
+				D21374E91A08A61100C35D36 /* Farkle_sunset_background.png */,
+				D21374EA1A08A61100C35D36 /* Farkle_Miami_beach_background.png */,
+				D21374E41A07462B00C35D36 /* Lion.jpg */,
+			);
+			name = Backgrounds;
+			sourceTree = "<group>";
+		};
 		D2B7DA801A06A65E00015415 = {
 			isa = PBXGroup;
 			children = (
@@ -79,9 +116,14 @@
 		D2B7DA8B1A06A65E00015415 /* FarklePad */ = {
 			isa = PBXGroup;
 			children = (
+				D21374D81A0739CC00C35D36 /* StarGameView.swift */,
+				D21374D61A071F4900C35D36 /* dicecolorview.swift */,
+				D21374D21A071C6700C35D36 /* SettingsTable.swift */,
+				D2B7DAB11A06A70700015415 /* Images */,
 				D2B7DA8E1A06A65E00015415 /* AppDelegate.swift */,
 				D2B7DA931A06A65E00015415 /* ViewController.swift */,
 				D2B7DA951A06A65E00015415 /* Main.storyboard */,
+				D21374E61A07596300C35D36 /* GameBoard.swift */,
 				D2B7DA981A06A65E00015415 /* Images.xcassets */,
 				D2B7DA9A1A06A65E00015415 /* LaunchScreen.xib */,
 				D2B7DA901A06A65E00015415 /* FarklePad.xcdatamodeld */,
@@ -113,6 +155,19 @@
 				D2B7DAA61A06A65E00015415 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D2B7DAB11A06A70700015415 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				D21374EE1A08A62A00C35D36 /* Backgrounds */,
+				D21374DA1A07449600C35D36 /* dice_black.png */,
+				D21374DB1A07449600C35D36 /* dice_kacki.png */,
+				D21374DC1A07449600C35D36 /* dice_light-blue.png */,
+				D21374DD1A07449600C35D36 /* dice_pink.png */,
+				D21374D41A071E6100C35D36 /* main.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,8 +250,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D21374DF1A07449600C35D36 /* dice_kacki.png in Resources */,
+				D21374D51A071E6100C35D36 /* main.png in Resources */,
+				D21374ED1A08A61100C35D36 /* Farkle_Miami_beach_background.png in Resources */,
+				D21374EB1A08A61100C35D36 /* Farkle_beach_background.png in Resources */,
+				D21374E51A07462B00C35D36 /* Lion.jpg in Resources */,
+				D21374EC1A08A61100C35D36 /* Farkle_sunset_background.png in Resources */,
+				D21374DE1A07449600C35D36 /* dice_black.png in Resources */,
 				D2B7DA971A06A65E00015415 /* Main.storyboard in Resources */,
 				D2B7DA9C1A06A65E00015415 /* LaunchScreen.xib in Resources */,
+				D21374E01A07449600C35D36 /* dice_light-blue.png in Resources */,
+				D21374E11A07449600C35D36 /* dice_pink.png in Resources */,
 				D2B7DA991A06A65E00015415 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,7 +281,11 @@
 			files = (
 				D2B7DA941A06A65E00015415 /* ViewController.swift in Sources */,
 				D2B7DA921A06A65E00015415 /* FarklePad.xcdatamodeld in Sources */,
+				D21374D91A0739CC00C35D36 /* StarGameView.swift in Sources */,
+				D21374E71A07596300C35D36 /* GameBoard.swift in Sources */,
 				D2B7DA8F1A06A65E00015415 /* AppDelegate.swift in Sources */,
+				D21374D71A071F4900C35D36 /* dicecolorview.swift in Sources */,
+				D21374D31A071C6700C35D36 /* SettingsTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +479,7 @@
 				D2B7DAAD1A06A65E00015415 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2B7DAAE1A06A65E00015415 /* Build configuration list for PBXNativeTarget "FarklePadTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +488,7 @@
 				D2B7DAB01A06A65E00015415 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
