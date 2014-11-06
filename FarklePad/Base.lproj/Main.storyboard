@@ -818,6 +818,9 @@
                                             <state key="normal" title="Bank">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="bankClick:" destination="xhT-fk-CGx" eventType="touchUpInside" id="tcg-r1-2Ia"/>
+                                            </connections>
                                         </button>
                                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lo4-fL-zpX">
                                             <rect key="frame" x="0.0" y="429" width="128" height="30"/>
@@ -1556,6 +1559,14 @@
                         <outletCollection property="scoreLabels" destination="qKh-MK-Ye3" collectionClass="NSMutableArray" id="nNs-wk-bdV"/>
                         <outletCollection property="scoreLabels" destination="Wcj-lx-kBg" collectionClass="NSMutableArray" id="ffu-bV-Qm5"/>
                         <outletCollection property="scoreLabels" destination="f2k-X2-PQR" collectionClass="NSMutableArray" id="deM-l4-oOw"/>
+                        <outletCollection property="farkleLabels" destination="fXD-Te-ctM" collectionClass="NSMutableArray" id="iuu-yk-5el"/>
+                        <outletCollection property="farkleLabels" destination="nI8-Au-3ZY" collectionClass="NSMutableArray" id="kz8-tH-PsJ"/>
+                        <outletCollection property="farkleLabels" destination="lj7-RI-byc" collectionClass="NSMutableArray" id="deb-4r-hgu"/>
+                        <outletCollection property="farkleLabels" destination="kF5-3k-Cqh" collectionClass="NSMutableArray" id="hyV-Py-nTS"/>
+                        <outletCollection property="farkleLabels" destination="clB-gU-8Up" collectionClass="NSMutableArray" id="CiM-JX-8DF"/>
+                        <outletCollection property="farkleLabels" destination="t8D-lc-I4k" collectionClass="NSMutableArray" id="cph-Sz-saf"/>
+                        <outletCollection property="farkleLabels" destination="ye1-oI-izF" collectionClass="NSMutableArray" id="VJV-l2-VYF"/>
+                        <outletCollection property="farkleLabels" destination="f1I-PC-0Ba" collectionClass="NSMutableArray" id="NTI-9d-tCP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lg5-B8-C0M" userLabel="First Responder" sceneMemberID="firstResponder"/>

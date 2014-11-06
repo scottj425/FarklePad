@@ -17,9 +17,10 @@ class GameBoard: UIViewController {
     @IBOutlet weak var rollLabel: UILabel!
     @IBOutlet var playerButtons: Array<UIButton>!
     @IBOutlet var scoreLabels: Array<UILabel>!
+    @IBOutlet var farkleLabels: Array<UILabel>!
     override func viewDidLoad() { 
         super.viewDidLoad()
-         let userDefaults = NSUserDefaults.standardUserDefaults()
+        let userDefaults = NSUserDefaults.standardUserDefaults()
         let names:Array = userDefaults.arrayForKey("names")!
         for var i=0;i<names.count;i++
         {
@@ -45,6 +46,36 @@ class GameBoard: UIViewController {
         
     }
 
-    
+    @IBAction func bankClick(sender: AnyObject) {
+        var bIndex = 0
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let names:Array = userDefaults.arrayForKey("names")!
+        for var i=0;i<names.count;i++
+        {
+            if (playerButtons[i].titleColorForState(.Normal) == UIColor.yellowColor())
+            {
+                bIndex = i
+                break
+            }
+        }
+        let startLabel = bIndex * 12
+        let endLabel = startLabel + 12
+        var currentLabel = 0
+        for var i=startLabel;i<endLabel;i++
+        {
+            if (scoreLabels[i].text == "")
+            {
+                currentLabel = i
+                break
+            }
+        }
+        if (currentLabel > startLabel && currentLabel < endLabel)
+        {
+            let prevScore = scoreLabels[currentLabel - 1].text?.toInt()
+            let curScore =  prevScore! + turnScore.text!.toInt()!
+            scoreLabels[currentLabel].text = String(curScore)
+            
+        }
+        }
     
 }
