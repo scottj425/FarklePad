@@ -14,7 +14,8 @@ class GameBoard: UIViewController {
     @IBOutlet var background: UIImageView!
     @IBOutlet var diceImage: UIImageView!
     @IBOutlet weak var turnScore: UILabel!
-    @IBOutlet weak var rollLabel: UILabel!
+    @IBOutlet var threshold: UILabel!
+    @IBOutlet var farkleLabel: UILabel!
     @IBOutlet var playerButtons: Array<UIButton>!
     @IBOutlet var scoreLabels: Array<UILabel>!
     @IBOutlet var farkleLabels: Array<UILabel>!
@@ -41,8 +42,7 @@ class GameBoard: UIViewController {
         var prevamount = turnScore.text?.toInt()
         var total = amount! + prevamount!
         turnScore.text = String(total)
-        var rollcount = rollLabel.text!.toInt()! + 1
-        rollLabel.text = String(rollcount)
+ 
         
     }
 
@@ -60,22 +60,126 @@ class GameBoard: UIViewController {
         }
         let startLabel = bIndex * 12
         let endLabel = startLabel + 12
-        var currentLabel = 0
+        var currentLabel = endLabel
+        
         for var i=startLabel;i<endLabel;i++
         {
             if (scoreLabels[i].text == "")
             {
+               
+                
                 currentLabel = i
                 break
             }
         }
+        let cThresh = checkThreshold(startLabel, eLabel: endLabel, curLabel: currentLabel)
+        if (cThresh == 1) {
+            nextPlayer(bIndex, nCount: names.count)
+            return
+        } else if (cThresh == 2) {
+            return
+        }
+        
         if (currentLabel > startLabel && currentLabel < endLabel)
         {
             let prevScore = scoreLabels[currentLabel - 1].text?.toInt()
-            let curScore =  prevScore! + turnScore.text!.toInt()!
+            var curScore =  prevScore! + turnScore.text!.toInt()!
+            if (turnScore.text!.toInt()! == 0) {
+                if (farkleLabels[bIndex].text == "••") {
+                    var text = farkleLabel.text
+                    var start = text?.rangeOfString(" = ")?.endIndex
+                    var amount = text?.substringFromIndex(start!).toInt()
+                    curScore = prevScore! + amount!
+                    farkleLabels[bIndex].text=""
+                } else {
+                    farkleLabels[bIndex].text = farkleLabels[bIndex].text! + "•"
+                }
+                
+            }
             scoreLabels[currentLabel].text = String(curScore)
             
+        } else if (currentLabel == startLabel) {
+            
+            let curScore = turnScore.text?.toInt()
+            
+            scoreLabels[currentLabel].text = "\(curScore!)"
+        } else if (currentLabel == endLabel) {
+            let prevScore = scoreLabels[endLabel - 1].text?.toInt()
+            var curScore =  prevScore! + turnScore.text!.toInt()!
+            for var i=startLabel;i<endLabel;i++
+            {
+               scoreLabels[i].text = ""
+            }
+            if (turnScore.text!.toInt()! == 0) {
+                if (farkleLabels[bIndex] == "••") {
+                    var text = farkleLabel.text
+                    var start = text?.rangeOfString(" = ")?.endIndex
+                    var amount = text?.substringFromIndex(start!).toInt()
+                    curScore = prevScore! + amount!
+                    farkleLabels[bIndex].text=""
+                } else {
+                    farkleLabels[bIndex].text = farkleLabels[bIndex].text! + "•"
+                }
+                
+            }
+
+            scoreLabels[startLabel].text = "\(curScore)"
         }
+        nextPlayer(bIndex, nCount: names.count)
+        
         }
+    @IBAction func resetClick(sender: AnyObject) {
+        turnScore.text = "0"
+    }
+    
+    func checkThreshold(sLabel:Int, eLabel:Int, curLabel:Int) -> Int {
+        println("Start: \(sLabel) - End: \(eLabel) - Current: \(curLabel)")
+        var totScore = 0
+        var text = threshold.text
+        var start = text?.rangeOfString(" = ")?.endIndex
+        var amount = text?.substringFromIndex(start!).toInt()
+
+        for var i = sLabel; i < eLabel; i++
+        {
+            if(scoreLabels[i].text != "")  && scoreLabels[i].text != "0"{
+                totScore++
+            }
+        }
+        if (totScore == 0 && turnScore.text?.toInt() < amount) {
+            if (turnScore.text?.toInt() == 0) {
+                if (curLabel == eLabel) {
+                    for var i = sLabel; i < eLabel; i++ {
+                        scoreLabels[i].text = ""
+                    }
+                    scoreLabels[sLabel].text = "0"
+                    return 1
+                }
+                scoreLabels[curLabel].text = "0"
+                
+                
+                return 1
+            }
+                var alert = UIAlertController(title: "FarklePad", message: "You must reach the starting threshold to get on the board.", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                showViewController(alert, sender: self)
+            
+            
+
+            return 2
+        } else {
+            return 3
+        }
+    }
+    func nextPlayer(bIndex:Int,nCount:Int) {
+        turnScore.text = "0"
+        if (bIndex < nCount - 1) {
+            playerButtons[bIndex].setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+            playerButtons[bIndex+1].setTitleColor(UIColor.yellowColor(), forState: UIControlState.Normal)
+        } else {
+            playerButtons[bIndex].setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+            playerButtons[0].setTitleColor(UIColor.yellowColor(), forState: UIControlState.Normal)
+        }
+
+    }
     
 }
