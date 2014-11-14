@@ -27,6 +27,8 @@
 		D2B7DA991A06A65E00015415 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2B7DA981A06A65E00015415 /* Images.xcassets */; };
 		D2B7DA9C1A06A65E00015415 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2B7DA9A1A06A65E00015415 /* LaunchScreen.xib */; };
 		D2B7DAA81A06A65E00015415 /* FarklePadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B7DAA71A06A65E00015415 /* FarklePadTests.swift */; };
+		D2FB001E1A0F24A5008219DF /* StartThresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB001D1A0F24A5008219DF /* StartThresh.swift */; };
+		D2FB00521A0F38B9008219DF /* FarklePenalty.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB00511A0F38B9008219DF /* FarklePenalty.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		D2B7DAA11A06A65E00015415 /* FarklePadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FarklePadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B7DAA61A06A65E00015415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2B7DAA71A06A65E00015415 /* FarklePadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarklePadTests.swift; sourceTree = "<group>"; };
+		D2FB001D1A0F24A5008219DF /* StartThresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartThresh.swift; sourceTree = "<group>"; };
+		D2FB00511A0F38B9008219DF /* FarklePenalty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FarklePenalty.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,8 @@
 		D2B7DA8B1A06A65E00015415 /* FarklePad */ = {
 			isa = PBXGroup;
 			children = (
+				D2FB00511A0F38B9008219DF /* FarklePenalty.swift */,
+				D2FB001D1A0F24A5008219DF /* StartThresh.swift */,
 				D21374D81A0739CC00C35D36 /* StarGameView.swift */,
 				D21374D61A071F4900C35D36 /* dicecolorview.swift */,
 				D21374D21A071C6700C35D36 /* SettingsTable.swift */,
@@ -279,9 +285,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2FB001E1A0F24A5008219DF /* StartThresh.swift in Sources */,
 				D2B7DA941A06A65E00015415 /* ViewController.swift in Sources */,
 				D2B7DA921A06A65E00015415 /* FarklePad.xcdatamodeld in Sources */,
 				D21374D91A0739CC00C35D36 /* StarGameView.swift in Sources */,
+				D2FB00521A0F38B9008219DF /* FarklePenalty.swift in Sources */,
 				D21374E71A07596300C35D36 /* GameBoard.swift in Sources */,
 				D2B7DA8F1A06A65E00015415 /* AppDelegate.swift in Sources */,
 				D21374D71A071F4900C35D36 /* dicecolorview.swift in Sources */,

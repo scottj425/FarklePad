@@ -9,7 +9,7 @@
 import UIKit
 
 class GameBoard: UIViewController {
-    
+    var playStatus = [0,0,0,0,0,0,0]
     @IBOutlet var effectview: UIVisualEffectView!
     @IBOutlet var background: UIImageView!
     @IBOutlet var diceImage: UIImageView!
@@ -29,6 +29,37 @@ class GameBoard: UIViewController {
             playerButtons[i].hidden=false
         }
         playerButtons[0].setTitleColor(UIColor.yellowColor(), forState: .Normal)
+        //Check for dice color
+        if ((userDefaults.objectForKey("dicecolor")) == nil) {
+            userDefaults.setValue("Black", forKey: "dicecolor")
+        }
+        switch userDefaults.objectForKey("dicecolor") as String {
+        case "Black":
+            diceImage.image = UIImage(named: "dice_black.png")
+        case "Blue":
+            diceImage.image = UIImage(named: "dice_light-blue.png")
+        case "Purple":
+            diceImage.image = UIImage(named: "dice_pink.png")
+        case "Tan":
+            diceImage.image = UIImage(named: "dice_kacki.png")
+        default:
+            diceImage.image = UIImage(named: "dice_black.png")
+        }
+
+                //Set threshold
+        if ((userDefaults.objectForKey("threshold")) == nil) {
+            userDefaults.setValue("500", forKey: "threshold")
+        }
+        let thresh = userDefaults.objectForKey("threshold") as String
+        threshold.text = "Start Threshold = \(thresh)"
+        //Set farkle
+        if ((userDefaults.objectForKey("farkle")) == nil) {
+            userDefaults.setValue("-500", forKey: "farkle")
+        }
+        let farkle = userDefaults.objectForKey("farkle") as String
+        farkleLabel.text = "Farkle = \(farkle)"
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,7 +103,7 @@ class GameBoard: UIViewController {
                 break
             }
         }
-        let cThresh = checkThreshold(startLabel, eLabel: endLabel, curLabel: currentLabel)
+        let cThresh = checkThreshold(startLabel, eLabel: endLabel, curLabel: currentLabel, bIndex: bIndex)
         if (cThresh == 1) {
             nextPlayer(bIndex, nCount: names.count)
             return
@@ -100,7 +131,20 @@ class GameBoard: UIViewController {
             
         } else if (currentLabel == startLabel) {
             
-            let curScore = turnScore.text?.toInt()
+            var curScore = turnScore.text?.toInt()
+            if (turnScore.text!.toInt()! == 0) {
+                if (farkleLabels[bIndex] == "••") {
+                    var text = farkleLabel.text
+                    var start = text?.rangeOfString(" = ")?.endIndex
+                    var amount = text?.substringFromIndex(start!).toInt()
+                    curScore = curScore! + amount!
+                    farkleLabels[bIndex].text=""
+                } else {
+                    farkleLabels[bIndex].text = farkleLabels[bIndex].text! + "•"
+                }
+                
+            }
+
             
             scoreLabels[currentLabel].text = "\(curScore!)"
         } else if (currentLabel == endLabel) {
@@ -125,6 +169,7 @@ class GameBoard: UIViewController {
 
             scoreLabels[startLabel].text = "\(curScore)"
         }
+        playStatus[bIndex] = 1
         nextPlayer(bIndex, nCount: names.count)
         
         }
@@ -132,20 +177,12 @@ class GameBoard: UIViewController {
         turnScore.text = "0"
     }
     
-    func checkThreshold(sLabel:Int, eLabel:Int, curLabel:Int) -> Int {
-        println("Start: \(sLabel) - End: \(eLabel) - Current: \(curLabel)")
-        var totScore = 0
+    func checkThreshold(sLabel:Int, eLabel:Int, curLabel:Int, bIndex:Int) -> Int {
+
         var text = threshold.text
         var start = text?.rangeOfString(" = ")?.endIndex
         var amount = text?.substringFromIndex(start!).toInt()
-
-        for var i = sLabel; i < eLabel; i++
-        {
-            if(scoreLabels[i].text != "")  && scoreLabels[i].text != "0"{
-                totScore++
-            }
-        }
-        if (totScore == 0 && turnScore.text?.toInt() < amount) {
+        if (playStatus[bIndex] == 0 && turnScore.text?.toInt() < amount) {
             if (turnScore.text?.toInt() == 0) {
                 if (curLabel == eLabel) {
                     for var i = sLabel; i < eLabel; i++ {

@@ -21,6 +21,7 @@ class StartGameView: UIViewController {
         playerStepper.maximumValue = 8
         playerStepper.autorepeat = true
         HideAll()
+       
         
     }
 

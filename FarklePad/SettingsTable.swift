@@ -11,6 +11,8 @@ import UIKit
 class SettingsTable: UITableViewController {
 
    
+    @IBOutlet var farkleLabel: UILabel!
+    @IBOutlet var threshLabel: UILabel!
     @IBOutlet weak var colorLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +21,15 @@ class SettingsTable: UITableViewController {
         if ((userDefaults.objectForKey("dicecolor")) == nil) {
             userDefaults.setValue("Black", forKey: "dicecolor")
         }
+        if ((userDefaults.objectForKey("threshold")) == nil) {
+            userDefaults.setValue("500", forKey: "threshold")
+        }
+        if ((userDefaults.objectForKey("farkle")) == nil) {
+            userDefaults.setValue("-500", forKey: "farkle")
+        }
         colorLabel.text = (userDefaults.objectForKey("dicecolor") as String)
+        threshLabel.text = (userDefaults.objectForKey("threshold") as String)
+        farkleLabel.text = (userDefaults.objectForKey("farkle") as String)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateColorLabel:", name: "diceColorChange", object: nil)
     }
 
@@ -30,11 +40,18 @@ class SettingsTable: UITableViewController {
 
     func updateColorLabel(notification: NSNotification) {
         let userDefaults = NSUserDefaults.standardUserDefaults()
-        
         if ((userDefaults.objectForKey("dicecolor")) == nil) {
             userDefaults.setValue("Black", forKey: "dicecolor")
         }
+        if ((userDefaults.objectForKey("threshold")) == nil) {
+            userDefaults.setValue("500", forKey: "threshold")
+        }
+        if ((userDefaults.objectForKey("farkle")) == nil) {
+            userDefaults.setValue("-500", forKey: "farkle")
+        }
         colorLabel.text = (userDefaults.objectForKey("dicecolor") as String)
+        threshLabel.text = (userDefaults.objectForKey("threshold") as String)
+       farkleLabel.text = (userDefaults.objectForKey("farkle") as String)
     }
 
 }
