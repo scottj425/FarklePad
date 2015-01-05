@@ -133,7 +133,7 @@ class GameBoard: UIViewController {
             
             var curScore = turnScore.text?.toInt()
             if (turnScore.text!.toInt()! == 0) {
-                if (farkleLabels[bIndex] == "••") {
+                if (farkleLabels[bIndex].text == "••") {
                     var text = farkleLabel.text
                     var start = text?.rangeOfString(" = ")?.endIndex
                     var amount = text?.substringFromIndex(start!).toInt()
@@ -155,13 +155,14 @@ class GameBoard: UIViewController {
                scoreLabels[i].text = ""
             }
             if (turnScore.text!.toInt()! == 0) {
-                if (farkleLabels[bIndex] == "••") {
+                if (farkleLabels[bIndex].text == "••") {
                     var text = farkleLabel.text
                     var start = text?.rangeOfString(" = ")?.endIndex
                     var amount = text?.substringFromIndex(start!).toInt()
                     curScore = prevScore! + amount!
                     farkleLabels[bIndex].text=""
                 } else {
+                    println("HERE")
                     farkleLabels[bIndex].text = farkleLabels[bIndex].text! + "•"
                 }
                 

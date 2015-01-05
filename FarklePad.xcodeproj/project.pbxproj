@@ -20,6 +20,7 @@
 		D21374EB1A08A61100C35D36 /* Farkle_beach_background.png in Resources */ = {isa = PBXBuildFile; fileRef = D21374E81A08A61100C35D36 /* Farkle_beach_background.png */; };
 		D21374EC1A08A61100C35D36 /* Farkle_sunset_background.png in Resources */ = {isa = PBXBuildFile; fileRef = D21374E91A08A61100C35D36 /* Farkle_sunset_background.png */; };
 		D21374ED1A08A61100C35D36 /* Farkle_Miami_beach_background.png in Resources */ = {isa = PBXBuildFile; fileRef = D21374EA1A08A61100C35D36 /* Farkle_Miami_beach_background.png */; };
+		D2B34EC71A1B1E0900DB5634 /* IAP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B34EC61A1B1E0900DB5634 /* IAP.swift */; };
 		D2B7DA8F1A06A65E00015415 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B7DA8E1A06A65E00015415 /* AppDelegate.swift */; };
 		D2B7DA921A06A65E00015415 /* FarklePad.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2B7DA901A06A65E00015415 /* FarklePad.xcdatamodeld */; };
 		D2B7DA941A06A65E00015415 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B7DA931A06A65E00015415 /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 		D2B7DA991A06A65E00015415 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2B7DA981A06A65E00015415 /* Images.xcassets */; };
 		D2B7DA9C1A06A65E00015415 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2B7DA9A1A06A65E00015415 /* LaunchScreen.xib */; };
 		D2B7DAA81A06A65E00015415 /* FarklePadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B7DAA71A06A65E00015415 /* FarklePadTests.swift */; };
+		D2D51E9F1A204D5D006C09F3 /* Button330x30.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D51E9E1A204D5D006C09F3 /* Button330x30.png */; };
 		D2FB001E1A0F24A5008219DF /* StartThresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB001D1A0F24A5008219DF /* StartThresh.swift */; };
 		D2FB00521A0F38B9008219DF /* FarklePenalty.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB00511A0F38B9008219DF /* FarklePenalty.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +57,7 @@
 		D21374E81A08A61100C35D36 /* Farkle_beach_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Farkle_beach_background.png; sourceTree = "<group>"; };
 		D21374E91A08A61100C35D36 /* Farkle_sunset_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Farkle_sunset_background.png; sourceTree = "<group>"; };
 		D21374EA1A08A61100C35D36 /* Farkle_Miami_beach_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Farkle_Miami_beach_background.png; sourceTree = "<group>"; };
+		D2B34EC61A1B1E0900DB5634 /* IAP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAP.swift; sourceTree = "<group>"; };
 		D2B7DA891A06A65E00015415 /* FarklePad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FarklePad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B7DA8D1A06A65E00015415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2B7DA8E1A06A65E00015415 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 		D2B7DAA11A06A65E00015415 /* FarklePadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FarklePadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B7DAA61A06A65E00015415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2B7DAA71A06A65E00015415 /* FarklePadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarklePadTests.swift; sourceTree = "<group>"; };
+		D2D51E9E1A204D5D006C09F3 /* Button330x30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Button330x30.png; sourceTree = "<group>"; };
 		D2FB001D1A0F24A5008219DF /* StartThresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartThresh.swift; sourceTree = "<group>"; };
 		D2FB00511A0F38B9008219DF /* FarklePenalty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FarklePenalty.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,6 +124,7 @@
 		D2B7DA8B1A06A65E00015415 /* FarklePad */ = {
 			isa = PBXGroup;
 			children = (
+				D2B34EC61A1B1E0900DB5634 /* IAP.swift */,
 				D2FB00511A0F38B9008219DF /* FarklePenalty.swift */,
 				D2FB001D1A0F24A5008219DF /* StartThresh.swift */,
 				D21374D81A0739CC00C35D36 /* StarGameView.swift */,
@@ -166,6 +171,7 @@
 		D2B7DAB11A06A70700015415 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D2D51E9E1A204D5D006C09F3 /* Button330x30.png */,
 				D21374EE1A08A62A00C35D36 /* Backgrounds */,
 				D21374DA1A07449600C35D36 /* dice_black.png */,
 				D21374DB1A07449600C35D36 /* dice_kacki.png */,
@@ -225,6 +231,7 @@
 				TargetAttributes = {
 					D2B7DA881A06A65E00015415 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = CCWXW7S3Z7;
 					};
 					D2B7DAA01A06A65E00015415 = {
 						CreatedOnToolsVersion = 6.1;
@@ -265,6 +272,7 @@
 				D21374DE1A07449600C35D36 /* dice_black.png in Resources */,
 				D2B7DA971A06A65E00015415 /* Main.storyboard in Resources */,
 				D2B7DA9C1A06A65E00015415 /* LaunchScreen.xib in Resources */,
+				D2D51E9F1A204D5D006C09F3 /* Button330x30.png in Resources */,
 				D21374E01A07449600C35D36 /* dice_light-blue.png in Resources */,
 				D21374E11A07449600C35D36 /* dice_pink.png in Resources */,
 				D2B7DA991A06A65E00015415 /* Images.xcassets in Resources */,
@@ -293,6 +301,7 @@
 				D21374E71A07596300C35D36 /* GameBoard.swift in Sources */,
 				D2B7DA8F1A06A65E00015415 /* AppDelegate.swift in Sources */,
 				D21374D71A071F4900C35D36 /* dicecolorview.swift in Sources */,
+				D2B34EC71A1B1E0900DB5634 /* IAP.swift in Sources */,
 				D21374D31A071C6700C35D36 /* SettingsTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,9 +427,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FarklePad/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -428,9 +440,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FarklePad/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
