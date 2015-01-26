@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D20CE4891A68C4C1009BF30D /* 8.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20CE4881A68C4C1009BF30D /* 8.swift */; };
+		D20CE4911A75EBF8009BF30D /* Pop-up.png in Resources */ = {isa = PBXBuildFile; fileRef = D20CE4901A75EBF8009BF30D /* Pop-up.png */; };
 		D21374D31A071C6700C35D36 /* SettingsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21374D21A071C6700C35D36 /* SettingsTable.swift */; };
 		D21374D51A071E6100C35D36 /* main.png in Resources */ = {isa = PBXBuildFile; fileRef = D21374D41A071E6100C35D36 /* main.png */; };
 		D21374D71A071F4900C35D36 /* dicecolorview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21374D61A071F4900C35D36 /* dicecolorview.swift */; };
@@ -20,6 +22,7 @@
 		D21374EB1A08A61100C35D36 /* Farkle_beach_background.png in Resources */ = {isa = PBXBuildFile; fileRef = D21374E81A08A61100C35D36 /* Farkle_beach_background.png */; };
 		D21374EC1A08A61100C35D36 /* Farkle_sunset_background.png in Resources */ = {isa = PBXBuildFile; fileRef = D21374E91A08A61100C35D36 /* Farkle_sunset_background.png */; };
 		D21374ED1A08A61100C35D36 /* Farkle_Miami_beach_background.png in Resources */ = {isa = PBXBuildFile; fileRef = D21374EA1A08A61100C35D36 /* Farkle_Miami_beach_background.png */; };
+		D27451921A5FA68500FAE8DD /* sad.wav in Resources */ = {isa = PBXBuildFile; fileRef = D27451911A5FA68500FAE8DD /* sad.wav */; };
 		D2B34EC71A1B1E0900DB5634 /* IAP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B34EC61A1B1E0900DB5634 /* IAP.swift */; };
 		D2B7DA8F1A06A65E00015415 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B7DA8E1A06A65E00015415 /* AppDelegate.swift */; };
 		D2B7DA921A06A65E00015415 /* FarklePad.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2B7DA901A06A65E00015415 /* FarklePad.xcdatamodeld */; };
@@ -44,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D20CE4881A68C4C1009BF30D /* 8.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 8.swift; sourceTree = "<group>"; };
+		D20CE4901A75EBF8009BF30D /* Pop-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pop-up.png"; sourceTree = "<group>"; };
 		D21374D21A071C6700C35D36 /* SettingsTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTable.swift; sourceTree = "<group>"; };
 		D21374D41A071E6100C35D36 /* main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main.png; sourceTree = "<group>"; };
 		D21374D61A071F4900C35D36 /* dicecolorview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dicecolorview.swift; sourceTree = "<group>"; };
@@ -57,6 +62,7 @@
 		D21374E81A08A61100C35D36 /* Farkle_beach_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Farkle_beach_background.png; sourceTree = "<group>"; };
 		D21374E91A08A61100C35D36 /* Farkle_sunset_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Farkle_sunset_background.png; sourceTree = "<group>"; };
 		D21374EA1A08A61100C35D36 /* Farkle_Miami_beach_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Farkle_Miami_beach_background.png; sourceTree = "<group>"; };
+		D27451911A5FA68500FAE8DD /* sad.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sad.wav; sourceTree = "<group>"; };
 		D2B34EC61A1B1E0900DB5634 /* IAP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAP.swift; sourceTree = "<group>"; };
 		D2B7DA891A06A65E00015415 /* FarklePad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FarklePad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B7DA8D1A06A65E00015415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,6 +101,7 @@
 		D21374EE1A08A62A00C35D36 /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				D20CE4901A75EBF8009BF30D /* Pop-up.png */,
 				D21374E81A08A61100C35D36 /* Farkle_beach_background.png */,
 				D21374E91A08A61100C35D36 /* Farkle_sunset_background.png */,
 				D21374EA1A08A61100C35D36 /* Farkle_Miami_beach_background.png */,
@@ -124,6 +131,8 @@
 		D2B7DA8B1A06A65E00015415 /* FarklePad */ = {
 			isa = PBXGroup;
 			children = (
+				D20CE4881A68C4C1009BF30D /* 8.swift */,
+				D27451911A5FA68500FAE8DD /* sad.wav */,
 				D2B34EC61A1B1E0900DB5634 /* IAP.swift */,
 				D2FB00511A0F38B9008219DF /* FarklePenalty.swift */,
 				D2FB001D1A0F24A5008219DF /* StartThresh.swift */,
@@ -266,11 +275,13 @@
 				D21374DF1A07449600C35D36 /* dice_kacki.png in Resources */,
 				D21374D51A071E6100C35D36 /* main.png in Resources */,
 				D21374ED1A08A61100C35D36 /* Farkle_Miami_beach_background.png in Resources */,
+				D27451921A5FA68500FAE8DD /* sad.wav in Resources */,
 				D21374EB1A08A61100C35D36 /* Farkle_beach_background.png in Resources */,
 				D21374E51A07462B00C35D36 /* Lion.jpg in Resources */,
 				D21374EC1A08A61100C35D36 /* Farkle_sunset_background.png in Resources */,
 				D21374DE1A07449600C35D36 /* dice_black.png in Resources */,
 				D2B7DA971A06A65E00015415 /* Main.storyboard in Resources */,
+				D20CE4911A75EBF8009BF30D /* Pop-up.png in Resources */,
 				D2B7DA9C1A06A65E00015415 /* LaunchScreen.xib in Resources */,
 				D2D51E9F1A204D5D006C09F3 /* Button330x30.png in Resources */,
 				D21374E01A07449600C35D36 /* dice_light-blue.png in Resources */,
@@ -303,6 +314,7 @@
 				D21374D71A071F4900C35D36 /* dicecolorview.swift in Sources */,
 				D2B34EC71A1B1E0900DB5634 /* IAP.swift in Sources */,
 				D21374D31A071C6700C35D36 /* SettingsTable.swift in Sources */,
+				D20CE4891A68C4C1009BF30D /* 8.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

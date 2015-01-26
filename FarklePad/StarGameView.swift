@@ -14,6 +14,8 @@ class StartGameView: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet var playerNames: Array<UITextField>!
     @IBOutlet var playerLabels: Array<UILabel>!
+    var labelCount:Int = 0
+    var yCount:CGFloat = 101
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -38,7 +40,10 @@ class StartGameView: UIViewController {
             playerLabels[i].enabled=true
             playerNames[i].hidden=false
             playerNames[i].enabled=true
+            
         }
+        yCount = playerNames[Int(playerStepper.value) - 1].center.y
+        startButton.center.y = yCount
         
         
     }
@@ -66,6 +71,10 @@ class StartGameView: UIViewController {
             playerNames[i].hidden=true
             playerNames[i].enabled=false
         }
+    }
+    override func viewDidLayoutSubviews() {
+        startButton.center.y = yCount + 40
+        
     }
    
 }

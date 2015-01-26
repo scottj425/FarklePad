@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--Start Game View-->
@@ -591,6 +591,36 @@
             </objects>
             <point key="canvasLocation" x="2083" y="-2032"/>
         </scene>
+        <!--Pop Over View-->
+        <scene sceneID="MIM-U7-kSr">
+            <objects>
+                <viewController storyboardIdentifier="PopOver" modalPresentationStyle="overCurrentContext" id="9qb-jW-YcC" customClass="PopOverView" customModule="FarklePad" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nHv-ww-PQy"/>
+                        <viewControllerLayoutGuide type="bottom" id="msQ-Oe-sFN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mKM-jy-3au">
+                        <rect key="frame" x="0.0" y="0.0" width="500" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ckb-ji-qsS" appends="YES" id="XxM-WZ-Csk"/>
+                        </connections>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="500" height="300"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="500" height="300"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uGF-bM-sfn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ckb-ji-qsS">
+                    <connections>
+                        <action selector="tapped:" destination="9qb-jW-YcC" id="1TD-MX-w7t"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2261" y="-1362"/>
+        </scene>
         <!--Game Board-->
         <scene sceneID="B4X-ro-Use">
             <objects>
@@ -608,7 +638,7 @@
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6nP-2z-ZR6">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="LQK-nf-VdQ">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LQK-nf-VdQ">
                                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <userGuides>
@@ -946,7 +976,7 @@
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DG9-cc-dop">
                                             <rect key="frame" x="919" y="41" width="92" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                            <state key="normal" title="Menu">
+                                            <state key="normal" title="End Game">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -1043,7 +1073,7 @@
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXD-Te-ctM">
                                             <rect key="frame" x="0.0" y="458" width="128" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Kx-sd-LcD">
@@ -1463,32 +1493,32 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nI8-Au-3ZY">
                                             <rect key="frame" x="128" y="458" width="128" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lj7-RI-byc">
                                             <rect key="frame" x="256" y="458" width="128" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kF5-3k-Cqh">
                                             <rect key="frame" x="384" y="458" width="128" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clB-gU-8Up">
                                             <rect key="frame" x="512" y="459" width="128" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8D-lc-I4k">
                                             <rect key="frame" x="640" y="458" width="128" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ye1-oI-izF">
                                             <rect key="frame" x="768" y="459" width="128" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0b-mV-Kru">
@@ -1561,7 +1591,7 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1I-PC-0Ba">
                                             <rect key="frame" x="896" y="459" width="128" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3js-VN-dnw">
@@ -1606,17 +1636,24 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Farkle = -500" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaB-BR-IYl">
-                                            <rect key="frame" x="790" y="154" width="184" height="21"/>
-                                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbl-s4-yul">
                                             <rect key="frame" x="128" y="479" width="128" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V72-wG-rO7">
+                                            <rect key="frame" x="818" y="152" width="156" height="30"/>
+                                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
+                                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <state key="normal" title="Farkle = -500">
+                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="nHR-In-3Re"/>
+                                                <action selector="farkleclick:" destination="xhT-fk-CGx" eventType="touchUpInside" id="40Z-u0-6XE"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 </view>
@@ -1630,7 +1667,7 @@
                     <connections>
                         <outlet property="background" destination="Sf5-mL-h3D" id="Hfb-Zb-gcV"/>
                         <outlet property="diceImage" destination="NK8-Yd-7yR" id="4Ce-ss-fcF"/>
-                        <outlet property="farkleLabel" destination="gaB-BR-IYl" id="ns5-cZ-Ppf"/>
+                        <outlet property="farkleLabel" destination="V72-wG-rO7" id="xN6-FS-8ar"/>
                         <outlet property="threshold" destination="8cc-J7-XeI" id="WKe-gT-Xx8"/>
                         <outlet property="turnScore" destination="9pL-6k-aFA" id="pOW-qp-jmr"/>
                         <outletCollection property="playerButtons" destination="Lo4-fL-zpX" collectionClass="NSMutableArray" id="DUK-1l-IhH"/>

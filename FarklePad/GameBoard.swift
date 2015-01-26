@@ -7,20 +7,26 @@
 //
 
 import UIKit
-
-class GameBoard: UIViewController {
-    var playStatus = [0,0,0,0,0,0,0]
+import AVFoundation
+var audioPlayer = AVAudioPlayer()
+class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate {
+    var playStatus = [0,0,0,0,0,0,0,0]
+    var thresh: String = ""
     @IBOutlet var effectview: UIVisualEffectView!
     @IBOutlet var background: UIImageView!
     @IBOutlet var diceImage: UIImageView!
     @IBOutlet weak var turnScore: UILabel!
     @IBOutlet var threshold: UILabel!
-    @IBOutlet var farkleLabel: UILabel!
+    @IBOutlet var farkleLabel: UIButton!
     @IBOutlet var playerButtons: Array<UIButton>!
     @IBOutlet var scoreLabels: Array<UILabel>!
     @IBOutlet var farkleLabels: Array<UILabel>!
     override func viewDidLoad() { 
         super.viewDidLoad()
+        var coinSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("sad", ofType: "wav")!)
+        
+        audioPlayer = AVAudioPlayer(contentsOfURL: coinSound, error: nil)
+        audioPlayer.prepareToPlay()
         let userDefaults = NSUserDefaults.standardUserDefaults()
         let names:Array = userDefaults.arrayForKey("names")!
         for var i=0;i<names.count;i++
@@ -50,15 +56,18 @@ class GameBoard: UIViewController {
         if ((userDefaults.objectForKey("threshold")) == nil) {
             userDefaults.setValue("500", forKey: "threshold")
         }
-        let thresh = userDefaults.objectForKey("threshold") as String
+        thresh = userDefaults.objectForKey("threshold") as String
         threshold.text = "Start Threshold = \(thresh)"
         //Set farkle
         if ((userDefaults.objectForKey("farkle")) == nil) {
             userDefaults.setValue("-500", forKey: "farkle")
         }
         let farkle = userDefaults.objectForKey("farkle") as String
-        farkleLabel.text = "Farkle = \(farkle)"
         
+        
+        
+        farkleLabel.setTitle("Farkle = \(farkle)", forState: UIControlState.Normal)
+       
         
     }
     
@@ -76,6 +85,16 @@ class GameBoard: UIViewController {
  
         
     }
+    @IBAction func farkleclick(sender: UIButton) {
+        var text = sender.currentTitle
+        var start = text?.rangeOfString(" = ")?.endIndex
+        var amount = text?.substringFromIndex(start!).toInt()
+        turnScore.text = "0"
+        audioPlayer.play()
+        bankClick(self)
+        
+    }
+
 
     @IBAction func bankClick(sender: AnyObject) {
         var bIndex = 0
@@ -116,14 +135,14 @@ class GameBoard: UIViewController {
             let prevScore = scoreLabels[currentLabel - 1].text?.toInt()
             var curScore =  prevScore! + turnScore.text!.toInt()!
             if (turnScore.text!.toInt()! == 0) {
-                if (farkleLabels[bIndex].text == "••") {
-                    var text = farkleLabel.text
+                if (farkleLabels[bIndex].text == "FF") {
+                    var text = farkleLabel.titleLabel?.text
                     var start = text?.rangeOfString(" = ")?.endIndex
                     var amount = text?.substringFromIndex(start!).toInt()
                     curScore = prevScore! + amount!
                     farkleLabels[bIndex].text=""
                 } else {
-                    farkleLabels[bIndex].text = farkleLabels[bIndex].text! + "•"
+                    farkleLabels[bIndex].text = farkleLabels[bIndex].text! + "F"
                 }
                 
             }
@@ -133,14 +152,14 @@ class GameBoard: UIViewController {
             
             var curScore = turnScore.text?.toInt()
             if (turnScore.text!.toInt()! == 0) {
-                if (farkleLabels[bIndex].text == "••") {
-                    var text = farkleLabel.text
+                if (farkleLabels[bIndex].text == "FF") {
+                    var text = farkleLabel.titleLabel?.text
                     var start = text?.rangeOfString(" = ")?.endIndex
                     var amount = text?.substringFromIndex(start!).toInt()
                     curScore = curScore! + amount!
                     farkleLabels[bIndex].text=""
                 } else {
-                    farkleLabels[bIndex].text = farkleLabels[bIndex].text! + "•"
+                    farkleLabels[bIndex].text = farkleLabels[bIndex].text! + "F"
                 }
                 
             }
@@ -155,15 +174,15 @@ class GameBoard: UIViewController {
                scoreLabels[i].text = ""
             }
             if (turnScore.text!.toInt()! == 0) {
-                if (farkleLabels[bIndex].text == "••") {
-                    var text = farkleLabel.text
+                if (farkleLabels[bIndex].text == "FF") {
+                    var text = farkleLabel.titleLabel?.text
                     var start = text?.rangeOfString(" = ")?.endIndex
                     var amount = text?.substringFromIndex(start!).toInt()
                     curScore = prevScore! + amount!
                     farkleLabels[bIndex].text=""
                 } else {
                     println("HERE")
-                    farkleLabels[bIndex].text = farkleLabels[bIndex].text! + "•"
+                    farkleLabels[bIndex].text = farkleLabels[bIndex].text! + "F"
                 }
                 
             }
@@ -218,6 +237,24 @@ class GameBoard: UIViewController {
             playerButtons[0].setTitleColor(UIColor.yellowColor(), forState: UIControlState.Normal)
         }
 
+    }
+    override func viewDidAppear(animated: Bool) {
+        var popoverContent = self.storyboard?.instantiateViewControllerWithIdentifier("PopOver") as PopOverView
+        var nav = UINavigationController(rootViewController: popoverContent)
+       // nav.modalPresentationStyle = UIModalPresentationStyle.Popover
+        //var popover = nav.popoverPresentationController
+       // popoverContent.preferredContentSize = CGSizeMake(500,600)
+        //popover?.delegate = self
+        //popover?.sourceView = self.view
+       // popover?.sourceRect = CGRectMake(0, 0, 500, 3000)
+      
+        popoverContent.titleString = "FarklePad"
+        
+        popoverContent.startThresh = thresh
+        var player1 = playerButtons[0].titleLabel?.text!
+        
+        popoverContent.player1 = player1!
+        self.presentViewController(popoverContent, animated: true, completion: nil)
     }
     
 }
