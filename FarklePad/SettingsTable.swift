@@ -11,6 +11,7 @@ import UIKit
 class SettingsTable: UITableViewController {
 
    
+    @IBOutlet var winLabel: UILabel!
     @IBOutlet var farkleLabel: UILabel!
     @IBOutlet var threshLabel: UILabel!
     @IBOutlet weak var colorLabel: UILabel!
@@ -24,11 +25,15 @@ class SettingsTable: UITableViewController {
         if ((userDefaults.objectForKey("threshold")) == nil) {
             userDefaults.setValue("500", forKey: "threshold")
         }
+        if ((userDefaults.objectForKey("winthreshold")) == nil) {
+            userDefaults.setValue("10000", forKey: "winthreshold")
+        }
         if ((userDefaults.objectForKey("farkle")) == nil) {
             userDefaults.setValue("-500", forKey: "farkle")
         }
         colorLabel.text = (userDefaults.objectForKey("dicecolor") as String)
         threshLabel.text = (userDefaults.objectForKey("threshold") as String)
+        winLabel.text = (userDefaults.objectForKey("winthreshold") as String)
         farkleLabel.text = (userDefaults.objectForKey("farkle") as String)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateColorLabel:", name: "diceColorChange", object: nil)
     }
@@ -52,6 +57,8 @@ class SettingsTable: UITableViewController {
         colorLabel.text = (userDefaults.objectForKey("dicecolor") as String)
         threshLabel.text = (userDefaults.objectForKey("threshold") as String)
        farkleLabel.text = (userDefaults.objectForKey("farkle") as String)
+        winLabel.text = (userDefaults.objectForKey("winthreshold") as String)
+
     }
 
 }

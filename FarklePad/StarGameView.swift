@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StartGameView: UIViewController {
+class StartGameView: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var playerStepper: UIStepper!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
@@ -23,7 +23,9 @@ class StartGameView: UIViewController {
         playerStepper.maximumValue = 8
         playerStepper.autorepeat = true
         HideAll()
-       
+        for tb in playerNames {
+            tb.delegate = self
+        }
         
     }
 
@@ -48,6 +50,20 @@ class StartGameView: UIViewController {
         
     }
     @IBAction func StartClick(sender: AnyObject) {
+        for textbox in playerNames
+        {
+            if textbox.enabled {
+                if countElements(textbox.text) == 0 {
+                    var alert = UIAlertController(title: "Alert", message: "Each player must have a name.", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                    break
+                }
+                
+            }
+        }
+
+        
         let userDefaults = NSUserDefaults.standardUserDefaults()
             var nameArray = [String]()
         for textbox in playerNames
@@ -74,6 +90,12 @@ class StartGameView: UIViewController {
     }
     override func viewDidLayoutSubviews() {
         startButton.center.y = yCount + 40
+        
+    }
+    func textField(textField: UITextField!, shouldChangeCharactersInRange range: NSRange, replacementString string: String!) -> Bool {
+        
+        let newLength = countElements(textField.text!) + countElements(string!) - range.length
+        return newLength <= 12 //Bool
         
     }
    

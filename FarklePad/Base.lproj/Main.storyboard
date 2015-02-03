@@ -409,17 +409,30 @@
                                             </segue>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Dqd-YX-CjJ">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Swr-ei-zdC" detailTextLabel="1Uz-hU-Y4k" style="IBUITableViewCellStyleValue1" id="Dqd-YX-CjJ">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dqd-YX-CjJ" id="1nx-SO-V70">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Winning Threshold" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Swr-ei-zdC">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Uz-hU-Y4k">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bgi-mO-Y3T">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bgi-mO-Y3T" id="2e9-UK-H8Z">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="VW3-yT-G4X" kind="popoverPresentation" popoverAnchorView="Dqd-YX-CjJ" id="sZ0-ER-65L">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -457,6 +470,7 @@
                         <outlet property="colorLabel" destination="E6z-fm-I1u" id="uBN-KB-mNL"/>
                         <outlet property="farkleLabel" destination="qp8-mq-gzz" id="Jjk-k2-hN1"/>
                         <outlet property="threshLabel" destination="Tiu-0O-Q9s" id="KLt-r3-25r"/>
+                        <outlet property="winLabel" destination="1Uz-hU-Y4k" id="XHD-P5-Ypz"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qvl-eX-mnN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -642,15 +656,15 @@
                                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <userGuides>
-                                        <userLayoutGuide location="128" affinity="minX"/>
+                                        <userLayoutGuide location="89" affinity="minX"/>
                                         <userLayoutGuide location="400" affinity="minY"/>
                                         <userLayoutGuide location="429" affinity="minY"/>
-                                        <userLayoutGuide location="256" affinity="minX"/>
-                                        <userLayoutGuide location="384" affinity="minX"/>
-                                        <userLayoutGuide location="640" affinity="minX"/>
+                                        <userLayoutGuide location="233" affinity="minX"/>
+                                        <userLayoutGuide location="376" affinity="minX"/>
+                                        <userLayoutGuide location="662" affinity="minX"/>
                                         <userLayoutGuide location="768" affinity="minX"/>
                                         <userLayoutGuide location="896" affinity="minX"/>
-                                        <userLayoutGuide location="512" affinity="minX"/>
+                                        <userLayoutGuide location="519" affinity="minX"/>
                                         <userLayoutGuide location="133" affinity="minY"/>
                                         <userLayoutGuide location="103" affinity="minY"/>
                                         <userLayoutGuide location="182" affinity="minY"/>
@@ -661,8 +675,8 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dice_black.png" translatesAutoresizingMaskIntoConstraints="NO" id="NK8-Yd-7yR">
                                             <rect key="frame" x="0.0" y="18" width="1024" height="750"/>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0c-KI-35d">
-                                            <rect key="frame" x="231" y="247" width="91" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0c-KI-35d">
+                                            <rect key="frame" x="189" y="247" width="121" height="30"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="x3 = 400">
@@ -673,8 +687,8 @@
                                                 <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="CDu-fB-I8T"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ge7-ws-EnP">
-                                            <rect key="frame" x="374" y="247" width="91" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ge7-ws-EnP">
+                                            <rect key="frame" x="330" y="247" width="123" height="30"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="x4 = 800">
@@ -685,8 +699,8 @@
                                                 <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="ctK-kY-GGd"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBp-1j-Jsy">
-                                            <rect key="frame" x="518" y="247" width="91" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBp-1j-Jsy">
+                                            <rect key="frame" x="473" y="247" width="135" height="30"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="x5 = 1200">
@@ -697,8 +711,8 @@
                                                 <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="Ngu-db-QLI"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVK-dG-jDn">
-                                            <rect key="frame" x="660" y="247" width="91" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVK-dG-jDn">
+                                            <rect key="frame" x="615" y="247" width="135" height="30"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="x6 = 1600">
@@ -709,8 +723,8 @@
                                                 <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="gCP-gU-Oub"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7d-iN-Bit">
-                                            <rect key="frame" x="88" y="103" width="91" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7d-iN-Bit">
+                                            <rect key="frame" x="44" y="103" width="122" height="30"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="x1 = 100">
@@ -721,8 +735,8 @@
                                                 <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="hbs-yO-Nqb"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ArT-YH-M0L">
-                                            <rect key="frame" x="231" y="103" width="91" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ArT-YH-M0L">
+                                            <rect key="frame" x="189" y="103" width="133" height="30"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="x3 = 1000">
@@ -733,8 +747,8 @@
                                                 <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="72b-5H-xHe"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQY-ye-e3N">
-                                            <rect key="frame" x="231" y="152" width="91" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQY-ye-e3N">
+                                            <rect key="frame" x="189" y="152" width="121" height="30"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="x3 = 200">
@@ -745,8 +759,8 @@
                                                 <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="f2f-JP-q31"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFy-fV-gDp">
-                                            <rect key="frame" x="374" y="152" width="91" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFy-fV-gDp">
+                                            <rect key="frame" x="330" y="152" width="123" height="30"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="x4 = 400">
@@ -757,8 +771,8 @@
                                                 <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="R7g-HI-InE"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwn-w7-df9">
-                                            <rect key="frame" x="518" y="152" width="91" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwn-w7-df9">
+                                            <rect key="frame" x="475" y="152" width="123" height="30"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="x5 = 600">
@@ -769,20 +783,8 @@
                                                 <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="bQL-FF-MpI"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zWK-KP-gcn">
-                                            <rect key="frame" x="660" y="152" width="91" height="30"/>
-                                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
-                                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <state key="normal" title="x6 = 800">
-                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="0bS-0K-s9o"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyp-76-bqW">
-                                            <rect key="frame" x="231" y="199" width="91" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyp-76-bqW">
+                                            <rect key="frame" x="189" y="199" width="121" height="30"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="x3 = 300">
@@ -793,8 +795,8 @@
                                                 <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="Ecl-cO-bkh"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTt-H6-w5Q">
-                                            <rect key="frame" x="374" y="199" width="91" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTt-H6-w5Q">
+                                            <rect key="frame" x="330" y="199" width="123" height="30"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="x4 = 600">
@@ -805,8 +807,8 @@
                                                 <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="cXI-nm-jzP"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="av2-RN-JwB">
-                                            <rect key="frame" x="518" y="199" width="91" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="av2-RN-JwB">
+                                            <rect key="frame" x="475" y="199" width="123" height="30"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="x5 = 900">
@@ -817,8 +819,8 @@
                                                 <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="YQK-hS-QBU"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UO0-cW-WMN">
-                                            <rect key="frame" x="660" y="199" width="91" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UO0-cW-WMN">
+                                            <rect key="frame" x="615" y="199" width="135" height="30"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="x6 = 1200">
@@ -829,8 +831,8 @@
                                                 <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="hCd-ur-asa"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHv-bh-o2J">
-                                            <rect key="frame" x="374" y="103" width="91" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHv-bh-o2J">
+                                            <rect key="frame" x="330" y="103" width="135" height="30"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="x4 = 2000">
@@ -841,8 +843,8 @@
                                                 <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="owc-Hi-iPr"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQf-g1-gGr">
-                                            <rect key="frame" x="518" y="103" width="91" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQf-g1-gGr">
+                                            <rect key="frame" x="473" y="103" width="135" height="30"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="x5 = 3000">
@@ -853,8 +855,8 @@
                                                 <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="wtg-u1-mes"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Edx-OB-tsW">
-                                            <rect key="frame" x="660" y="103" width="91" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Edx-OB-tsW">
+                                            <rect key="frame" x="616" y="103" width="135" height="30"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="x6 = 4000">
@@ -865,8 +867,8 @@
                                                 <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="Qw7-zC-eFp"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WgT-af-iNf">
-                                            <rect key="frame" x="88" y="293" width="88" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WgT-af-iNf">
+                                            <rect key="frame" x="43" y="293" width="113" height="30"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="x1 = 50">
@@ -877,8 +879,8 @@
                                                 <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="AYO-JO-qrj"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDu-Bt-dFo">
-                                            <rect key="frame" x="231" y="342" width="91" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDu-Bt-dFo">
+                                            <rect key="frame" x="189" y="342" width="121" height="30"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="x3 = 600">
@@ -889,8 +891,8 @@
                                                 <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="TYo-99-T3R"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GiX-vD-Nw7">
-                                            <rect key="frame" x="374" y="342" width="91" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GiX-vD-Nw7">
+                                            <rect key="frame" x="330" y="342" width="135" height="30"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="x4 = 1200">
@@ -901,8 +903,8 @@
                                                 <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="fig-9b-Jtc"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEJ-09-XRz">
-                                            <rect key="frame" x="518" y="342" width="91" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEJ-09-XRz">
+                                            <rect key="frame" x="473" y="342" width="135" height="30"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="x5 = 1800">
@@ -913,8 +915,8 @@
                                                 <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="YiB-d1-5Yc"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdN-fT-H5V">
-                                            <rect key="frame" x="660" y="342" width="91" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdN-fT-H5V">
+                                            <rect key="frame" x="616" y="342" width="135" height="30"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="x6 = 2400">
@@ -925,8 +927,8 @@
                                                 <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="cTF-VY-ZZ2"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKe-FS-pbH">
-                                            <rect key="frame" x="231" y="293" width="91" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKe-FS-pbH">
+                                            <rect key="frame" x="189" y="293" width="121" height="30"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="x3 = 500">
@@ -937,8 +939,8 @@
                                                 <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="UEg-Z1-3Le"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZL-YP-xLc">
-                                            <rect key="frame" x="374" y="293" width="91" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZL-YP-xLc">
+                                            <rect key="frame" x="330" y="293" width="135" height="30"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="x4 = 1000">
@@ -949,8 +951,8 @@
                                                 <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="aCR-w1-uoG"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gho-x6-KhM">
-                                            <rect key="frame" x="518" y="293" width="91" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gho-x6-KhM">
+                                            <rect key="frame" x="473" y="293" width="135" height="30"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="x5 = 1500">
@@ -961,8 +963,8 @@
                                                 <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="cxZ-lU-u45"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lx0-KP-TI6">
-                                            <rect key="frame" x="660" y="293" width="91" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lx0-KP-TI6">
+                                            <rect key="frame" x="616" y="293" width="135" height="30"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="x6 = 2000">
@@ -971,16 +973,6 @@
                                             </state>
                                             <connections>
                                                 <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="3QC-aH-97U"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DG9-cc-dop">
-                                            <rect key="frame" x="919" y="41" width="92" height="30"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                            <state key="normal" title="End Game">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" id="ehY-1e-YxS"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pL-6k-aFA">
@@ -995,26 +987,6 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mtu-Zm-8fZ">
-                                            <rect key="frame" x="784" y="41" width="135" height="30"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                            <state key="normal" title="Reset Score">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="resetClick:" destination="xhT-fk-CGx" eventType="touchUpInside" id="hjE-Gg-aBP"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGo-WQ-7xF">
-                                            <rect key="frame" x="702" y="41" width="67" height="30"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                            <state key="normal" title="Bank">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="bankClick:" destination="xhT-fk-CGx" eventType="touchUpInside" id="tcg-r1-2Ia"/>
-                                            </connections>
-                                        </button>
                                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lo4-fL-zpX">
                                             <rect key="frame" x="0.0" y="429" width="128" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1594,8 +1566,8 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3js-VN-dnw">
-                                            <rect key="frame" x="827" y="263" width="147" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3js-VN-dnw">
+                                            <rect key="frame" x="827" y="263" width="147" height="50"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="Straight = 1500">
@@ -1606,8 +1578,8 @@
                                                 <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="tF6-9f-DDm"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVw-9h-nTj">
-                                            <rect key="frame" x="818" y="199" width="156" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVw-9h-nTj">
+                                            <rect key="frame" x="818" y="199" width="156" height="50"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="Three Pair = 750">
@@ -1618,8 +1590,8 @@
                                                 <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="anh-Xf-U7e"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBz-uE-FML">
-                                            <rect key="frame" x="739" y="329" width="235" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBz-uE-FML">
+                                            <rect key="frame" x="759" y="329" width="215" height="50"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="Two Sets of Three = 2500">
@@ -1642,7 +1614,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V72-wG-rO7">
-                                            <rect key="frame" x="818" y="152" width="156" height="30"/>
+                                            <rect key="frame" x="802" y="152" width="172" height="30"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="Farkle = -500">
@@ -1652,6 +1624,51 @@
                                             <connections>
                                                 <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="nHR-In-3Re"/>
                                                 <action selector="farkleclick:" destination="xhT-fk-CGx" eventType="touchUpInside" id="40Z-u0-6XE"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DG9-cc-dop">
+                                            <rect key="frame" x="919" y="41" width="92" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <state key="normal" title="End Game">
+                                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="ehY-1e-YxS"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mtu-Zm-8fZ">
+                                            <rect key="frame" x="784" y="41" width="135" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <state key="normal" title="Reset Score">
+                                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="resetClick:" destination="xhT-fk-CGx" eventType="touchUpInside" id="hjE-Gg-aBP"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGo-WQ-7xF">
+                                            <rect key="frame" x="702" y="41" width="67" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <state key="normal" title="Bank">
+                                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="bankClick:" destination="xhT-fk-CGx" eventType="touchUpInside" id="tcg-r1-2Ia"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zWK-KP-gcn">
+                                            <rect key="frame" x="616" y="152" width="123" height="30"/>
+                                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
+                                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <state key="normal" title="x6 = 800">
+                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="click:" destination="xhT-fk-CGx" eventType="touchUpInside" id="0bS-0K-s9o"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -1782,6 +1799,9 @@
                         <outletCollection property="farkleLabels" destination="t8D-lc-I4k" collectionClass="NSMutableArray" id="cph-Sz-saf"/>
                         <outletCollection property="farkleLabels" destination="ye1-oI-izF" collectionClass="NSMutableArray" id="VJV-l2-VYF"/>
                         <outletCollection property="farkleLabels" destination="f1I-PC-0Ba" collectionClass="NSMutableArray" id="NTI-9d-tCP"/>
+                        <outletCollection property="topButtons" destination="yGo-WQ-7xF" collectionClass="NSMutableArray" id="jYd-fc-lvi"/>
+                        <outletCollection property="topButtons" destination="Mtu-Zm-8fZ" collectionClass="NSMutableArray" id="CAN-Hr-dvO"/>
+                        <outletCollection property="topButtons" destination="DG9-cc-dop" collectionClass="NSMutableArray" id="MW5-p8-fMU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lg5-B8-C0M" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1827,6 +1847,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8PH-g1-L2C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="182" y="-1795"/>
+        </scene>
+        <!--Win Thresh-->
+        <scene sceneID="api-b1-jcj">
+            <objects>
+                <viewController id="VW3-yT-G4X" customClass="WinThresh" customModule="FarklePad" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5RH-AY-2PG"/>
+                        <viewControllerLayoutGuide type="bottom" id="k7y-7t-iOQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BaA-Sz-Bg4">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lP4-cb-9yT">
+                                <rect key="frame" x="-60" y="28" width="320" height="162"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="VW3-yT-G4X" id="Wt8-AA-HTX"/>
+                                    <outlet property="delegate" destination="VW3-yT-G4X" id="Xen-mg-XNa"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqb-Dx-JGu">
+                                <rect key="frame" x="154" y="0.0" width="46" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneClick:" destination="VW3-yT-G4X" eventType="touchUpInside" id="Zb5-0P-tHT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="200" height="200"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="200" height="200"/>
+                    <connections>
+                        <outlet property="apicker" destination="lP4-cb-9yT" id="dgb-pL-owf"/>
+                        <outlet property="doneButton" destination="xqb-Dx-JGu" id="Z4D-Ub-tsa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="feT-J7-Mkn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2083" y="-1773"/>
         </scene>
     </scenes>
     <resources>

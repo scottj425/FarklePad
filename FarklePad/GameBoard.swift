@@ -12,6 +12,8 @@ var audioPlayer = AVAudioPlayer()
 class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate {
     var playStatus = [0,0,0,0,0,0,0,0]
     var thresh: String = ""
+    var winAmount: String = ""
+    var finalTurns: Bool = false
     @IBOutlet var effectview: UIVisualEffectView!
     @IBOutlet var background: UIImageView!
     @IBOutlet var diceImage: UIImageView!
@@ -20,6 +22,7 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate {
     @IBOutlet var farkleLabel: UIButton!
     @IBOutlet var playerButtons: Array<UIButton>!
     @IBOutlet var scoreLabels: Array<UILabel>!
+    @IBOutlet var topButtons: Array<UIButton>!
     @IBOutlet var farkleLabels: Array<UILabel>!
     override func viewDidLoad() { 
         super.viewDidLoad()
@@ -42,8 +45,12 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate {
         switch userDefaults.objectForKey("dicecolor") as String {
         case "Black":
             diceImage.image = UIImage(named: "dice_black.png")
+            for button in topButtons {
+                button.titleLabel?.textColor = UIColor.whiteColor()
+            }
         case "Blue":
             diceImage.image = UIImage(named: "dice_light-blue.png")
+         
         case "Purple":
             diceImage.image = UIImage(named: "dice_pink.png")
         case "Tan":
@@ -58,6 +65,11 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate {
         }
         thresh = userDefaults.objectForKey("threshold") as String
         threshold.text = "Start Threshold = \(thresh)"
+        if ((userDefaults.objectForKey("winthreshold")) == nil) {
+            userDefaults.setValue("10000", forKey: "winthreshold")
+        }
+        winAmount = userDefaults.objectForKey("winthreshold") as String
+        
         //Set farkle
         if ((userDefaults.objectForKey("farkle")) == nil) {
             userDefaults.setValue("-500", forKey: "farkle")
@@ -252,7 +264,7 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate {
         
         popoverContent.startThresh = thresh
         var player1 = playerButtons[0].titleLabel?.text!
-        
+        popoverContent.winAmount = winAmount
         popoverContent.player1 = player1!
         self.presentViewController(popoverContent, animated: true, completion: nil)
     }

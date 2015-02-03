@@ -13,7 +13,7 @@ class PopOverView: UIViewController {
     var bgimage: UIImageView = UIImageView()
     var player1: String = ""
     var startThresh: String = ""
-    
+    var winAmount: String = ""
     override func viewDidLoad() {
       //self.view.alpha = 0.4
       self.view.backgroundColor = UIColor.clearColor()
@@ -48,7 +48,7 @@ class PopOverView: UIViewController {
         Label1.textAlignment = NSTextAlignment.Center
         Label1.lineBreakMode = NSLineBreakMode.ByWordWrapping
         Label1.numberOfLines = 4
-        Label1.text = " Welcome to your game! You need at least \(startThresh) points to get on the board and 10,000 points to win. Let's play!"
+        Label1.text = " Welcome to your game! You need at least \(startThresh) points to get on the board and \(winAmount) points to win. Let's play!"
         self.view.addSubview(Label1)
         var Label2:UILabel = UILabel(frame: CGRectMake(bgimage.frame.origin.x+5, bgimage.frame.origin.y+70, 480, 200))
         Label2.textAlignment = NSTextAlignment.Center
