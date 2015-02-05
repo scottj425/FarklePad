@@ -1893,11 +1893,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tXC-ef-nsc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="w9i-OO-why">
-                    <connections>
-                        <action selector="tapped:" destination="A6T-Ac-laB" id="mEd-8d-aRJ"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer id="w9i-OO-why"/>
             </objects>
             <point key="canvasLocation" x="2261" y="-977"/>
         </scene>
