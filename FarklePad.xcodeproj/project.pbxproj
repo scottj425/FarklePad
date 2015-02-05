@@ -27,6 +27,8 @@
 		D2A13A1C1A7EB89D00CF227B /* dice_white.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A13A151A7EB89D00CF227B /* dice_white.png */; };
 		D2A13A1D1A7EB89D00CF227B /* dice_pink.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A13A161A7EB89D00CF227B /* dice_pink.png */; };
 		D2A13A1F1A807F2B00CF227B /* WinThresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A13A1E1A807F2B00CF227B /* WinThresh.swift */; };
+		D2A13A211A832CA400CF227B /* beachbackground_no_blur.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A13A201A832CA400CF227B /* beachbackground_no_blur.png */; };
+		D2A13A231A832FF600CF227B /* userView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A13A221A832FF600CF227B /* userView.swift */; };
 		D2B34EC71A1B1E0900DB5634 /* IAP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B34EC61A1B1E0900DB5634 /* IAP.swift */; };
 		D2B7DA8F1A06A65E00015415 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B7DA8E1A06A65E00015415 /* AppDelegate.swift */; };
 		D2B7DA921A06A65E00015415 /* FarklePad.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2B7DA901A06A65E00015415 /* FarklePad.xcdatamodeld */; };
@@ -71,6 +73,8 @@
 		D2A13A151A7EB89D00CF227B /* dice_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_white.png; sourceTree = "<group>"; };
 		D2A13A161A7EB89D00CF227B /* dice_pink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_pink.png; sourceTree = "<group>"; };
 		D2A13A1E1A807F2B00CF227B /* WinThresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinThresh.swift; sourceTree = "<group>"; };
+		D2A13A201A832CA400CF227B /* beachbackground_no_blur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = beachbackground_no_blur.png; path = ../beachbackground_no_blur.png; sourceTree = "<group>"; };
+		D2A13A221A832FF600CF227B /* userView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userView.swift; sourceTree = "<group>"; };
 		D2B34EC61A1B1E0900DB5634 /* IAP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAP.swift; sourceTree = "<group>"; };
 		D2B7DA891A06A65E00015415 /* FarklePad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FarklePad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B7DA8D1A06A65E00015415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 		D21374EE1A08A62A00C35D36 /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				D2A13A201A832CA400CF227B /* beachbackground_no_blur.png */,
 				D20CE4901A75EBF8009BF30D /* Pop-up.png */,
 				D21374E81A08A61100C35D36 /* Farkle_beach_background.png */,
 				D21374E91A08A61100C35D36 /* Farkle_sunset_background.png */,
@@ -153,6 +158,7 @@
 		D2B7DA8B1A06A65E00015415 /* FarklePad */ = {
 			isa = PBXGroup;
 			children = (
+				D2A13A221A832FF600CF227B /* userView.swift */,
 				D2A13A1E1A807F2B00CF227B /* WinThresh.swift */,
 				D20CE4881A68C4C1009BF30D /* 8.swift */,
 				D27451911A5FA68500FAE8DD /* sad.wav */,
@@ -294,6 +300,7 @@
 			files = (
 				D21374D51A071E6100C35D36 /* main.png in Resources */,
 				D21374ED1A08A61100C35D36 /* Farkle_Miami_beach_background.png in Resources */,
+				D2A13A211A832CA400CF227B /* beachbackground_no_blur.png in Resources */,
 				D2A13A1B1A7EB89D00CF227B /* dice_orange.png in Resources */,
 				D2A13A181A7EB89D00CF227B /* dice_dark_blue.png in Resources */,
 				D2A13A171A7EB89D00CF227B /* dice_black.png in Resources */,
@@ -338,6 +345,7 @@
 				D21374D71A071F4900C35D36 /* dicecolorview.swift in Sources */,
 				D2B34EC71A1B1E0900DB5634 /* IAP.swift in Sources */,
 				D21374D31A071C6700C35D36 /* SettingsTable.swift in Sources */,
+				D2A13A231A832FF600CF227B /* userView.swift in Sources */,
 				D20CE4891A68C4C1009BF30D /* 8.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

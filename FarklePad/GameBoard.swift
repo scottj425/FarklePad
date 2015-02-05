@@ -40,23 +40,22 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate {
         playerButtons[0].setTitleColor(UIColor.yellowColor(), forState: .Normal)
         //Check for dice color
         if ((userDefaults.objectForKey("dicecolor")) == nil) {
-            userDefaults.setValue("Black", forKey: "dicecolor")
+            userDefaults.setValue("White", forKey: "dicecolor")
         }
         switch userDefaults.objectForKey("dicecolor") as String {
-        case "Black":
-            diceImage.image = UIImage(named: "dice_black.png")
-            for button in topButtons {
-                button.titleLabel?.textColor = UIColor.whiteColor()
-            }
+        case "White":
+            diceImage.image = UIImage(named: "dice_white.png")
+            
         case "Blue":
-            diceImage.image = UIImage(named: "dice_light-blue.png")
-         
+            diceImage.image = UIImage(named: "dice_light_blue.png")
+        case "Orange":
+            diceImage.image = UIImage(named: "dice_orange.png")
         case "Purple":
             diceImage.image = UIImage(named: "dice_pink.png")
         case "Tan":
             diceImage.image = UIImage(named: "dice_kacki.png")
         default:
-            diceImage.image = UIImage(named: "dice_black.png")
+            diceImage.image = UIImage(named: "dice_white.png")
         }
 
                 //Set threshold
