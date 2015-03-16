@@ -14,6 +14,8 @@ class PopOverView: UIViewController {
     var player1: String = ""
     var startThresh: String = ""
     var winAmount: String = ""
+    var msgNum: Int = 0;
+    var label: UILabel = UILabel()
     override func viewDidLoad() {
       //self.view.alpha = 0.4
       self.view.backgroundColor = UIColor.clearColor()
@@ -21,7 +23,7 @@ class PopOverView: UIViewController {
         bgimage = UIImageView(image: popup)
         bgimage.center = self.view.center
         self.view.addSubview(bgimage)
-        var label: UILabel = UILabel(frame: CGRectMake(bgimage.frame.origin.x + 10, bgimage.frame.origin.y-25, bgimage.frame.size.width, 100))
+        label = UILabel(frame: CGRectMake(bgimage.frame.origin.x + 10, bgimage.frame.origin.y-25, bgimage.frame.size.width, 100))
         label.font = UIFont.boldSystemFontOfSize(24)
         
         label.text = titleString
@@ -31,7 +33,11 @@ class PopOverView: UIViewController {
         dismissLabel.text = "- tap anywhere to dismiss -"
         dismissLabel.font = UIFont.systemFontOfSize(12)
         self.view.addSubview(dismissLabel)
-        welcomegame()
+        if (msgNum == 0) {
+            welcomegame()
+        } else if (msgNum == 1) {
+            winThreshHit()
+        }
         
         
     }
@@ -44,7 +50,7 @@ class PopOverView: UIViewController {
         // Dispose of any resources that can be recreated.
 }
     func welcomegame() {
-          var Label1:UILabel = UILabel(frame: CGRectMake(bgimage.frame.origin.x+5, bgimage.frame.origin.y, 480, 200))
+        var Label1:UILabel = UILabel(frame: CGRectMake(bgimage.frame.origin.x+5, bgimage.frame.origin.y, 480, 200))
         Label1.textAlignment = NSTextAlignment.Center
         Label1.lineBreakMode = NSLineBreakMode.ByWordWrapping
         Label1.numberOfLines = 4
@@ -52,10 +58,24 @@ class PopOverView: UIViewController {
         self.view.addSubview(Label1)
         var Label2:UILabel = UILabel(frame: CGRectMake(bgimage.frame.origin.x+5, bgimage.frame.origin.y+70, 480, 200))
         Label2.textAlignment = NSTextAlignment.Center
-        Label2.text = "\(player1)'s Turn"
+        Label2.text = "\(player1)'s turn"
         Label2.font = UIFont.boldSystemFontOfSize(25)
         self.view.addSubview(Label2)
     }
-       
+    func winThreshHit() {
+        
+        var Label1:UILabel = UILabel(frame: CGRectMake(bgimage.frame.origin.x+5, bgimage.frame.origin.y+80, 480, 200))
+        Label1.textAlignment = NSTextAlignment.Center
+        Label1.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        Label1.numberOfLines = 4
+        Label1.text = " Every other player will now have one chance to beat \(player1)’s high score for the win!"
+        self.view.addSubview(Label1)
+        var Label2:UILabel = UILabel(frame: CGRectMake(bgimage.frame.origin.x+5, bgimage.frame.origin.y, 480, 200))
+        Label2.textAlignment = NSTextAlignment.Center
+        Label2.text = player1 + " reached " + winAmount + " points!"
+        Label2.font = UIFont.boldSystemFontOfSize(25)
+        self.view.addSubview(Label2)
+
+    }
 }
 

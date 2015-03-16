@@ -50,6 +50,9 @@ class StartGameView: UIViewController, UITextFieldDelegate {
         
     }
     @IBAction func StartClick(sender: AnyObject) {
+        //
+                
+        //
         for textbox in playerNames
         {
             if textbox.enabled {
