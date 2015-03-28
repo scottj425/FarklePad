@@ -10,40 +10,31 @@ import UIKit
 import StoreKit
 
 class IAPViewController: UIViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver {
-    let product_value =  "CCWXW7S3Z7.com.outofrange.farklepadfree"
-
+    let product_value =  "farklepadfull"
+    var product: SKProduct!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.backgroundColor = UIColor.clearColor()
+        self.fetchAvailableProducts()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        fetchAvailableProducts()
         // Dispose of any resources that can be recreated.
 }
     func fetchAvailableProducts() {
-        let productID:NSSet = NSSet(object: self.product_value);
+        let productID:NSSet = NSSet(object: product_value);
         let productsRequest:SKProductsRequest = SKProductsRequest(productIdentifiers: productID);
         productsRequest.delegate = self;
         productsRequest.start();
     }
     
     func productsRequest (request: SKProductsRequest, didReceiveResponse response: SKProductsResponse) {
-        println("here!")
-        var count : Int = response.products.count
-        if (count>0) {
-            var validProducts = response.products
-            var validProduct: SKProduct = response.products[0] as SKProduct
-            if (validProduct.productIdentifier == self.product_value) {
-                println(validProduct.localizedTitle)
-                println(validProduct.localizedDescription)
-                println(validProduct.price)
-            } else {
-                println(validProduct.productIdentifier)
-            }
-        } else {
-            println("nothing")
+        let products = response.products
+        if products.count != 0
+        {
+            product = products[0] as SKProduct
+            println("Fetched: " + product.productIdentifier)
         }
     }
     
@@ -64,8 +55,10 @@ class IAPViewController: UIViewController, SKProductsRequestDelegate, SKPaymentT
         }
     }
     
+    
     @IBAction func button1_Click(sender: AnyObject) {
-        fetchAvailableProducts()
+        
+     purchaseMyProduct(product)
     }
     func paymentQueue(queue: SKPaymentQueue!, updatedTransactions transactions: [AnyObject]!)    {
         for transaction:AnyObject in transactions {
@@ -77,13 +70,28 @@ class IAPViewController: UIViewController, SKProductsRequestDelegate, SKPaymentT
                 case .Failed:
                     SKPaymentQueue.defaultQueue().finishTransaction(transaction as SKPaymentTransaction)
                     break;
-                    // case .Restored:
-                    //[self restoreTransaction:transaction];
+                case .Restored:
+                    SKPaymentQueue.defaultQueue().restoreCompletedTransactions()
+                    println("Restored")
+                   // [self restoreTransaction:transaction];
                 default:
                     break;
                 }
             }
         }
+    }
+    func paymentQueueRestoreCompletedTransactionsFinished(queue: SKPaymentQueue!) {
+        for transaction in queue.transactions {
+            var txn: SKPaymentTransaction = transaction as SKPaymentTransaction
+            println(txn.payment.productIdentifier)
+        }
+    }
+    @IBAction func restore(sender: AnyObject) {
+        SKPaymentQueue.defaultQueue().addTransactionObserver(self)
+       SKPaymentQueue.defaultQueue().restoreCompletedTransactions()
+    }
+    @IBAction func tapped(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 

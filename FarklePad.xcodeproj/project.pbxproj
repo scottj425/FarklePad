@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A50227C1AB7E5F900A2D7EA /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8A50227B1AB7E5F900A2D7EA /* click.wav */; };
+		8A50227E1AB7F32F00A2D7EA /* winning.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8A50227D1AB7F32F00A2D7EA /* winning.wav */; };
 		D20CE4891A68C4C1009BF30D /* 8.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20CE4881A68C4C1009BF30D /* 8.swift */; };
 		D20CE4911A75EBF8009BF30D /* Pop-up.png in Resources */ = {isa = PBXBuildFile; fileRef = D20CE4901A75EBF8009BF30D /* Pop-up.png */; };
 		D21374D31A071C6700C35D36 /* SettingsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21374D21A071C6700C35D36 /* SettingsTable.swift */; };
@@ -53,6 +55,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8A50227B1AB7E5F900A2D7EA /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.wav; sourceTree = "<group>"; };
+		8A50227D1AB7F32F00A2D7EA /* winning.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = winning.wav; sourceTree = "<group>"; };
+		8AB774241AC5200500FB4DEB /* FarklePad.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FarklePad.entitlements; sourceTree = "<group>"; };
 		D20CE4881A68C4C1009BF30D /* 8.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 8.swift; sourceTree = "<group>"; };
 		D20CE4901A75EBF8009BF30D /* Pop-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pop-up.png"; sourceTree = "<group>"; };
 		D21374D21A071C6700C35D36 /* SettingsTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTable.swift; sourceTree = "<group>"; };
@@ -158,6 +163,9 @@
 		D2B7DA8B1A06A65E00015415 /* FarklePad */ = {
 			isa = PBXGroup;
 			children = (
+				8AB774241AC5200500FB4DEB /* FarklePad.entitlements */,
+				8A50227D1AB7F32F00A2D7EA /* winning.wav */,
+				8A50227B1AB7E5F900A2D7EA /* click.wav */,
 				D2A13A221A832FF600CF227B /* userView.swift */,
 				D2A13A1E1A807F2B00CF227B /* WinThresh.swift */,
 				D20CE4881A68C4C1009BF30D /* 8.swift */,
@@ -267,6 +275,11 @@
 					D2B7DA881A06A65E00015415 = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = CCWXW7S3Z7;
+						SystemCapabilities = {
+							com.apple.OMC = {
+								enabled = 1;
+							};
+						};
 					};
 					D2B7DAA01A06A65E00015415 = {
 						CreatedOnToolsVersion = 6.1;
@@ -305,6 +318,7 @@
 				D2A13A181A7EB89D00CF227B /* dice_dark_blue.png in Resources */,
 				D2A13A171A7EB89D00CF227B /* dice_black.png in Resources */,
 				D27451921A5FA68500FAE8DD /* sad.wav in Resources */,
+				8A50227C1AB7E5F900A2D7EA /* click.wav in Resources */,
 				D21374EB1A08A61100C35D36 /* Farkle_beach_background.png in Resources */,
 				D2A13A1C1A7EB89D00CF227B /* dice_white.png in Resources */,
 				D2A13A1D1A7EB89D00CF227B /* dice_pink.png in Resources */,
@@ -316,6 +330,7 @@
 				D2A13A191A7EB89D00CF227B /* dice_kacki.png in Resources */,
 				D2B7DA9C1A06A65E00015415 /* LaunchScreen.xib in Resources */,
 				D2D51E9F1A204D5D006C09F3 /* Button330x30.png in Resources */,
+				8A50227E1AB7F32F00A2D7EA /* winning.wav in Resources */,
 				D2B7DA991A06A65E00015415 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,12 +486,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FarklePad/FarklePad.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FarklePad/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2763e125-6c7a-4999-94a0-c02a81b4a2d7";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -484,12 +500,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FarklePad/FarklePad.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FarklePad/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2763e125-6c7a-4999-94a0-c02a81b4a2d7";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

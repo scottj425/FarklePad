@@ -9,6 +9,7 @@
 import UIKit
 
 class PopOverView: UIViewController {
+    var wait: Bool = true
     var titleString: String = ""
     var bgimage: UIImageView = UIImageView()
     var player1: String = ""
@@ -37,12 +38,20 @@ class PopOverView: UIViewController {
             welcomegame()
         } else if (msgNum == 1) {
             winThreshHit()
+        } else if (msgNum == 2) {
+            gameOver()
         }
         
         
     }
 
     @IBAction func tapped(sender: AnyObject) {
+        if (msgNum == 2) {
+            var storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            var vc : ViewController = storyboard.instantiateViewControllerWithIdentifier("mainScreen") as ViewController
+            self.presentViewController(vc, animated: false, completion: nil)
+            return
+        }
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     override func didReceiveMemoryWarning() {
@@ -77,5 +86,28 @@ class PopOverView: UIViewController {
         self.view.addSubview(Label2)
 
     }
+    func gameOver() {
+        
+        var Label1:UILabel = UILabel(frame: CGRectMake(bgimage.frame.origin.x+5, bgimage.frame.origin.y+80, 480, 200))
+        Label1.textAlignment = NSTextAlignment.Center
+        Label1.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        Label1.numberOfLines = 4
+        Label1.text = "Congratulations \(player1)! Thank you for playing farkle with FarklePad. Your farkle game scorekeeper. Please check out other Out Of Range apps at http://www.outofrange.productions"
+        self.view.addSubview(Label1)
+        var Label2:UILabel = UILabel(frame: CGRectMake(bgimage.frame.origin.x+5, bgimage.frame.origin.y, 480, 200))
+        Label2.textAlignment = NSTextAlignment.Center
+        Label2.text = player1 + " won with " + winAmount + " points!"
+        Label2.font = UIFont.boldSystemFontOfSize(25)
+        self.view.addSubview(Label2)
+        
+        
+    }
+func waitFor (inout wait: Bool) {
+        while (wait) {
+            NSRunLoop.currentRunLoop().runMode(NSDefaultRunLoopMode,
+                beforeDate: NSDate(timeIntervalSinceNow: 0.1))
+        }
+    }
+
 }
 

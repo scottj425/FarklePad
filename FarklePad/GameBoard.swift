@@ -9,6 +9,8 @@
 import UIKit
 import AVFoundation
 var audioPlayer = AVAudioPlayer()
+var clickSound = AVAudioPlayer()
+var winSound = AVAudioPlayer()
 class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate {
     var playStatus = [0,0,0,0,0,0,0,0]
     var thresh: String = ""
@@ -35,6 +37,12 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate {
         
         audioPlayer = AVAudioPlayer(contentsOfURL: coinSound, error: nil)
         audioPlayer.prepareToPlay()
+        var clickSoundfile = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("click", ofType: "wav")!)
+        clickSound = AVAudioPlayer(contentsOfURL: clickSoundfile, error: nil)
+        clickSound.prepareToPlay()
+        var winSoundfile = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("winning", ofType: "wav")!)
+        winSound = AVAudioPlayer(contentsOfURL: winSoundfile, error: nil)
+        winSound.prepareToPlay()
         let userDefaults = NSUserDefaults.standardUserDefaults()
         let names:Array = userDefaults.arrayForKey("names")!
         for var i=0;i<names.count;i++
@@ -85,7 +93,17 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate {
         let winthresh = userDefaults.objectForKey("winthreshold") as String
         
         farkleLabel.setTitle("Farkle = \(farkle)", forState: UIControlState.Normal)
-       
+        if (userDefaults.valueForKey("customimage") != nil) {
+            var custombg = userDefaults.valueForKey("customimage") as Bool
+            if (custombg) {
+                var imageData = userDefaults.valueForKey("background") as NSData
+                background.image = UIImage(data: imageData)
+            } else {
+                background.image = UIImage(named: "Farkle_beach_background.png")
+            }
+        } else {
+            background.image = UIImage(named: "Farkle_beach_background.png")
+        }
         
     }
     
@@ -100,7 +118,7 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate {
         var prevamount = turnScore.text?.toInt()
         var total = amount! + prevamount!
         turnScore.text = String(total)
- 
+        clickSound.play()
         
     }
     @IBAction func farkleclick(sender: UIButton) {
@@ -110,11 +128,13 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate {
         turnScore.text = "0"
         audioPlayer.play()
         bankClick(self)
+        clickSound.play()
         
     }
 
 
     @IBAction func bankClick(sender: AnyObject) {
+        clickSound.play()
         var curScore = 0
         var bIndex = 0
         let userDefaults = NSUserDefaults.standardUserDefaults()
@@ -127,8 +147,8 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate {
                 break
             }
         }
-        let startLabel = bIndex * 12
-        let endLabel = startLabel + 12
+        let startLabel = bIndex *  10
+        let endLabel = startLabel + 10
         var currentLabel = endLabel
         
         for var i=startLabel;i<endLabel;i++
@@ -225,6 +245,7 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate {
         
         }
     @IBAction func resetClick(sender: AnyObject) {
+        clickSound.play()
         turnScore.text = "0"
     }
     
@@ -322,6 +343,7 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate {
         return false
     }
     func gameOver() {
+        
         println("Game Over")
         var prevScore = 0
         var curLabel = 0
@@ -334,8 +356,14 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate {
                 }
             }
         }
-        println("High Score \(prevScore)")
-        println(curLabel/12)
+         var popoverContent = self.storyboard?.instantiateViewControllerWithIdentifier("PopOver") as PopOverView
+        popoverContent.titleString = "We have a winner!"
+        popoverContent.winAmount = String(prevScore)
+        popoverContent.player1 = playerButtons[curLabel/10].titleLabel!.text!
+        popoverContent.msgNum = 2
+        winSound.play()
+        self.presentViewController(popoverContent, animated: true, completion: nil)
+        
         
         
         

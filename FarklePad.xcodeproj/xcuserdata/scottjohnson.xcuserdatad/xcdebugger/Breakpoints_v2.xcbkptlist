@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FarklePad/8.swift"
-            timestampString = "446706958.023106"
+            timestampString = "448261203.358514"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "11"
@@ -22,24 +22,10 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "FarklePad.PopOverView.titleString.setter : Swift.String"
+                  symbolName = "FarklePad.PopOverView.titleString.getter : Swift.String"
                   moduleName = "FarklePad"
                   urlString = "file:///Users/scottjohnson/Documents/Xcode%20Projects/FarklePad/FarklePad/8.swift"
-                  timestampString = "448160556.976496"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "24">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FarklePad.PopOverView.titleString.materializeForSet : Swift.String"
-                  moduleName = "FarklePad"
-                  urlString = "file:///Users/scottjohnson/Documents/Xcode%20Projects/FarklePad/FarklePad/8.swift"
-                  timestampString = "448160556.976751"
+                  timestampString = "448257090.153346"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -50,15 +36,43 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
+                  symbolName = "FarklePad.PopOverView.titleString.setter : Swift.String"
+                  moduleName = "FarklePad"
+                  urlString = "file:///Users/scottjohnson/Documents/Xcode%20Projects/FarklePad/FarklePad/8.swift"
+                  timestampString = "448257090.153809"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FarklePad.PopOverView.titleString.materializeForSet : Swift.String"
+                  moduleName = "FarklePad"
+                  urlString = "file:///Users/scottjohnson/Documents/Xcode%20Projects/FarklePad/FarklePad/8.swift"
+                  timestampString = "448257090.154058"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
                   symbolName = "FarklePad.PopOverView.init (FarklePad.PopOverView.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; FarklePad.PopOverView"
                   moduleName = "FarklePad"
                   urlString = "file:///Users/scottjohnson/Documents/Xcode%20Projects/FarklePad/FarklePad/8.swift"
-                  timestampString = "448160556.977063"
+                  timestampString = "448257090.154295"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "12"
                   endingLineNumber = "12"
-                  offsetFromSymbolStart = "45">
+                  offsetFromSymbolStart = "48">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -67,12 +81,12 @@
                   symbolName = "FarklePad.PopOverView.init (FarklePad.PopOverView.Type)() -&gt; FarklePad.PopOverView"
                   moduleName = "FarklePad"
                   urlString = "file:///Users/scottjohnson/Documents/Xcode%20Projects/FarklePad/FarklePad/8.swift"
-                  timestampString = "448160556.977302"
+                  timestampString = "448257090.154477"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "12"
                   endingLineNumber = "12"
-                  offsetFromSymbolStart = "34">
+                  offsetFromSymbolStart = "16">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -81,12 +95,12 @@
                   symbolName = "FarklePad.PopOverView.init (FarklePad.PopOverView.Type)(coder : ObjectiveC.NSCoder) -&gt; FarklePad.PopOverView"
                   moduleName = "FarklePad"
                   urlString = "file:///Users/scottjohnson/Documents/Xcode%20Projects/FarklePad/FarklePad/8.swift"
-                  timestampString = "448160556.977552"
+                  timestampString = "448257090.15467"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "12"
                   endingLineNumber = "12"
-                  offsetFromSymbolStart = "38">
+                  offsetFromSymbolStart = "20">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -98,13 +112,87 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FarklePad/GameBoard.swift"
-            timestampString = "448161862.135186"
+            timestampString = "448433667.165185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "309"
-            endingLineNumber = "309"
+            startingLineNumber = "330"
+            endingLineNumber = "330"
             landmarkName = "checkForWin(_:player:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FarklePad/IAP.swift"
+            timestampString = "448256734.071868"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "IAPViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FarklePad.IAPViewController.product_value.getter : Swift.String"
+                  moduleName = "FarklePad"
+                  urlString = "file:///Users/scottjohnson/Documents/Xcode%20Projects/FarklePad/FarklePad/IAP.swift"
+                  timestampString = "448257090.177654"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FarklePad.IAPViewController.init (FarklePad.IAPViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; FarklePad.IAPViewController"
+                  moduleName = "FarklePad"
+                  urlString = "file:///Users/scottjohnson/Documents/Xcode%20Projects/FarklePad/FarklePad/IAP.swift"
+                  timestampString = "448257090.177967"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FarklePad.IAPViewController.init (FarklePad.IAPViewController.Type)() -&gt; FarklePad.IAPViewController"
+                  moduleName = "FarklePad"
+                  urlString = "file:///Users/scottjohnson/Documents/Xcode%20Projects/FarklePad/FarklePad/IAP.swift"
+                  timestampString = "448257090.178214"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FarklePad.IAPViewController.init (FarklePad.IAPViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; FarklePad.IAPViewController"
+                  moduleName = "FarklePad"
+                  urlString = "file:///Users/scottjohnson/Documents/Xcode%20Projects/FarklePad/FarklePad/IAP.swift"
+                  timestampString = "448257090.178472"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

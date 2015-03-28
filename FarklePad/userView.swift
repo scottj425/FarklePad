@@ -20,10 +20,6 @@ class userView: UIViewController,UITextFieldDelegate {
             self.view.backgroundColor = UIColor.clearColor()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
-        playerStepper.minimumValue = 2
-        playerStepper.maximumValue = 8
-        playerStepper.autorepeat = true
-        HideAll()
         for tb in playerNames {
             tb.delegate = self
         }
@@ -40,31 +36,28 @@ class userView: UIViewController,UITextFieldDelegate {
     func keyboardWillHide(sender: NSNotification) {
         self.view.frame.origin.y += 150
     }
-    @IBAction func StepperClick(sender: AnyObject) {
-        countLabel.text = String(format:"%.f", playerStepper.value)
-        HideAll()
-        for var i = 2; i < Int(playerStepper.value); i++
-        {
-            playerLabels[i].hidden=false
-            playerLabels[i].enabled=true
-            playerNames[i].hidden=false
-            playerNames[i].enabled=true
-            
-        }
-        
-        
-    }
+
     @IBAction func StartClick(sender: AnyObject) {
-        
+        var textEmpty: Bool = false
         //
+        if (countElements(playerNames[0].text) == 0 || countElements(playerNames[1].text) == 0) {
+            var alert = UIAlertController(title: "Alert", message: "Farklepad Requires a minimum of 2 players.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            return
+        }
         for textbox in playerNames
         {
             if textbox.enabled {
                 if countElements(textbox.text) == 0 {
-                    var alert = UIAlertController(title: "Alert", message: "Each player must have a name.", preferredStyle: UIAlertControllerStyle.Alert)
+                    textEmpty = true
+                } else {
+                    if (textEmpty) {
+                    var alert = UIAlertController(title: "", message: "Please do not skip players.", preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
-                    break
+                    return
+                    }
                 }
                 
             }
@@ -75,7 +68,7 @@ class userView: UIViewController,UITextFieldDelegate {
         var nameArray = [String]()
         for textbox in playerNames
         {
-            if textbox.enabled {
+            if countElements(textbox.text) > 1{
                 
                 nameArray.append(textbox.text)
                 
@@ -105,7 +98,14 @@ class userView: UIViewController,UITextFieldDelegate {
         return newLength <= 12 //Bool
         
     }
-    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField.tag != 7 {
+            playerNames[textField.tag + 1].becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return false
+    }
 
 }
 

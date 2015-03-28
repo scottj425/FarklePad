@@ -8,9 +8,9 @@
 
 import UIKit
 
-class SettingsTable: UITableViewController {
+class SettingsTable: UITableViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
-   
+   var imagePicker = UIImagePickerController()
     @IBOutlet var winLabel: UILabel!
     @IBOutlet var farkleLabel: UILabel!
     @IBOutlet var threshLabel: UILabel!
@@ -18,23 +18,11 @@ class SettingsTable: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let userDefaults = NSUserDefaults.standardUserDefaults()
-        
-        if ((userDefaults.objectForKey("dicecolor")) == nil) {
-            userDefaults.setValue("Black", forKey: "dicecolor")
-        }
-        if ((userDefaults.objectForKey("threshold")) == nil) {
-            userDefaults.setValue("500", forKey: "threshold")
-        }
-        if ((userDefaults.objectForKey("winthreshold")) == nil) {
-            userDefaults.setValue("10000", forKey: "winthreshold")
-        }
-        if ((userDefaults.objectForKey("farkle")) == nil) {
-            userDefaults.setValue("-500", forKey: "farkle")
-        }
         colorLabel.text = (userDefaults.objectForKey("dicecolor") as String)
         threshLabel.text = (userDefaults.objectForKey("threshold") as String)
         winLabel.text = (userDefaults.objectForKey("winthreshold") as String)
         farkleLabel.text = (userDefaults.objectForKey("farkle") as String)
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateColorLabel:", name: "diceColorChange", object: nil)
     }
 
@@ -60,6 +48,59 @@ class SettingsTable: UITableViewController {
         winLabel.text = (userDefaults.objectForKey("winthreshold") as String)
 
     }
-
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        println("index: \(indexPath)")
+        if indexPath == NSIndexPath(forItem: 1, inSection: 0) {
+            let prefs = NSUserDefaults.standardUserDefaults()
+            var cell: UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+            if (cell.accessoryType == UITableViewCellAccessoryType.Checkmark) {
+             cell.accessoryType = UITableViewCellAccessoryType.None
+            cell.selected=false
+            prefs.setValue(false, forKey: "customimage")
+                return
+            }
+            println("photo")
+            
+            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum){
+                println("Button capture")
+                
+                
+                imagePicker.delegate = self
+                imagePicker.sourceType = UIImagePickerControllerSourceType.SavedPhotosAlbum
+                imagePicker.allowsEditing = false
+                
+                self.presentViewController(imagePicker, animated: true, completion: nil)
+            }
+        }
+    }
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        let prefs = NSUserDefaults.standardUserDefaults()
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            
+            var imageData = UIImagePNGRepresentation(image)
+            
+            prefs.setValue(imageData, forKey: "background")
+            
+            
+        })
+        prefs.setValue(true, forKey: "customimage")
+        imagePicker.dismissViewControllerAnimated(false, completion: nil)
+        var cell: UITableViewCell = tableView.cellForRowAtIndexPath(NSIndexPath(forItem: 1, inSection: 0))!
+        cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        self.tableView.reloadData()
+    }
+    override func viewDidAppear(animated: Bool) {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        
+            var custombg = userDefaults.objectForKey("customimage") as Bool
+            if (custombg) {
+                var cell: UITableViewCell = tableView.cellForRowAtIndexPath(NSIndexPath(forItem: 1, inSection: 0))!
+                cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+            } else {
+                var cell: UITableViewCell = tableView.cellForRowAtIndexPath(NSIndexPath(forItem: 1, inSection: 0))!
+                cell.accessoryType = UITableViewCellAccessoryType.None
+                
+            }
+    }
 }
 
