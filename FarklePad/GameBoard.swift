@@ -8,16 +8,19 @@
 
 import UIKit
 import AVFoundation
+import iAd
 var audioPlayer = AVAudioPlayer()
 var clickSound = AVAudioPlayer()
 var winSound = AVAudioPlayer()
-class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate {
+class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate, ADBannerViewDelegate {
     var playStatus = [0,0,0,0,0,0,0,0]
     var thresh: String = ""
     var winAmount: String = ""
     var finalTurns: Bool = false
+    var viewLoaded: Bool = false
     @IBOutlet var effectview: UIVisualEffectView!
     @IBOutlet var background: UIImageView!
+    
     @IBOutlet var diceImage: UIImageView!
     @IBOutlet weak var turnScore: UILabel!
     @IBOutlet var threshold: UILabel!
@@ -28,11 +31,8 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate {
     @IBOutlet var farkleLabels: Array<UILabel>!
     override func viewDidLoad() { 
         super.viewDidLoad()
-        //
-        
-        
-        
-        //
+        self.canDisplayBannerAds = true
+    
         var coinSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("sad", ofType: "wav")!)
         
         audioPlayer = AVAudioPlayer(contentsOfURL: coinSound, error: nil)
@@ -309,14 +309,17 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate {
         //popover?.delegate = self
         //popover?.sourceView = self.view
        // popover?.sourceRect = CGRectMake(0, 0, 500, 3000)
-      
+        
         popoverContent.titleString = "FarklePad"
         popoverContent.startThresh = thresh
         var player1 = playerButtons[0].titleLabel?.text!
         popoverContent.winAmount = winAmount
         popoverContent.player1 = player1!
         popoverContent.msgNum = 0
+        if (!viewLoaded) {
         self.presentViewController(popoverContent, animated: true, completion: nil)
+            viewLoaded = true
+        }
     }
     func checkForWin(curValue:Int, player:Int)->Bool {
         var winValue = winAmount.toInt()
@@ -367,5 +370,8 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate {
         
         
         
+    }
+    func bannerViewDidLoadAd(banner: ADBannerView!) {
+        banner.hidden=false
     }
 }

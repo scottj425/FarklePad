@@ -10,7 +10,7 @@ import UIKit
 
 class SettingsTable: UITableViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
-   var imagePicker = UIImagePickerController()
+   var imagePicker = photoView()
     @IBOutlet var winLabel: UILabel!
     @IBOutlet var farkleLabel: UILabel!
     @IBOutlet var threshLabel: UILabel!

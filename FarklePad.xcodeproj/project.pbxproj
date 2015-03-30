@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8A50227C1AB7E5F900A2D7EA /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8A50227B1AB7E5F900A2D7EA /* click.wav */; };
 		8A50227E1AB7F32F00A2D7EA /* winning.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8A50227D1AB7F32F00A2D7EA /* winning.wav */; };
+		D2095FBB1AC91B4300CF7073 /* photoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2095FBA1AC91B4300CF7073 /* photoView.swift */; };
 		D20CE4891A68C4C1009BF30D /* 8.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20CE4881A68C4C1009BF30D /* 8.swift */; };
 		D20CE4911A75EBF8009BF30D /* Pop-up.png in Resources */ = {isa = PBXBuildFile; fileRef = D20CE4901A75EBF8009BF30D /* Pop-up.png */; };
 		D21374D31A071C6700C35D36 /* SettingsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21374D21A071C6700C35D36 /* SettingsTable.swift */; };
@@ -40,6 +41,7 @@
 		D2B7DA9C1A06A65E00015415 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2B7DA9A1A06A65E00015415 /* LaunchScreen.xib */; };
 		D2B7DAA81A06A65E00015415 /* FarklePadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B7DAA71A06A65E00015415 /* FarklePadTests.swift */; };
 		D2D51E9F1A204D5D006C09F3 /* Button330x30.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D51E9E1A204D5D006C09F3 /* Button330x30.png */; };
+		D2F3797E1AC9045D0038BA22 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F3797D1AC9045D0038BA22 /* iAd.framework */; };
 		D2FB001E1A0F24A5008219DF /* StartThresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB001D1A0F24A5008219DF /* StartThresh.swift */; };
 		D2FB00521A0F38B9008219DF /* FarklePenalty.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB00511A0F38B9008219DF /* FarklePenalty.swift */; };
 /* End PBXBuildFile section */
@@ -58,6 +60,7 @@
 		8A50227B1AB7E5F900A2D7EA /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.wav; sourceTree = "<group>"; };
 		8A50227D1AB7F32F00A2D7EA /* winning.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = winning.wav; sourceTree = "<group>"; };
 		8AB774241AC5200500FB4DEB /* FarklePad.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FarklePad.entitlements; sourceTree = "<group>"; };
+		D2095FBA1AC91B4300CF7073 /* photoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = photoView.swift; sourceTree = "<group>"; };
 		D20CE4881A68C4C1009BF30D /* 8.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 8.swift; sourceTree = "<group>"; };
 		D20CE4901A75EBF8009BF30D /* Pop-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pop-up.png"; sourceTree = "<group>"; };
 		D21374D21A071C6700C35D36 /* SettingsTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTable.swift; sourceTree = "<group>"; };
@@ -93,6 +96,7 @@
 		D2B7DAA61A06A65E00015415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2B7DAA71A06A65E00015415 /* FarklePadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarklePadTests.swift; sourceTree = "<group>"; };
 		D2D51E9E1A204D5D006C09F3 /* Button330x30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Button330x30.png; sourceTree = "<group>"; };
+		D2F3797D1AC9045D0038BA22 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		D2FB001D1A0F24A5008219DF /* StartThresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartThresh.swift; sourceTree = "<group>"; };
 		D2FB00511A0F38B9008219DF /* FarklePenalty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FarklePenalty.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2F3797E1AC9045D0038BA22 /* iAd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +150,7 @@
 		D2B7DA801A06A65E00015415 = {
 			isa = PBXGroup;
 			children = (
+				D2F3797D1AC9045D0038BA22 /* iAd.framework */,
 				D2B7DA8B1A06A65E00015415 /* FarklePad */,
 				D2B7DAA41A06A65E00015415 /* FarklePadTests */,
 				D2B7DA8A1A06A65E00015415 /* Products */,
@@ -185,6 +191,7 @@
 				D2B7DA9A1A06A65E00015415 /* LaunchScreen.xib */,
 				D2B7DA901A06A65E00015415 /* FarklePad.xcdatamodeld */,
 				D2B7DA8C1A06A65E00015415 /* Supporting Files */,
+				D2095FBA1AC91B4300CF7073 /* photoView.swift */,
 			);
 			path = FarklePad;
 			sourceTree = "<group>";
@@ -350,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2FB001E1A0F24A5008219DF /* StartThresh.swift in Sources */,
+				D2095FBB1AC91B4300CF7073 /* photoView.swift in Sources */,
 				D2B7DA941A06A65E00015415 /* ViewController.swift in Sources */,
 				D2A13A1F1A807F2B00CF227B /* WinThresh.swift in Sources */,
 				D2B7DA921A06A65E00015415 /* FarklePad.xcdatamodeld in Sources */,

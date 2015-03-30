@@ -24,12 +24,12 @@
                   continueAfterRunningActions = "No"
                   symbolName = "FarklePad.StartGameView.playerStepper.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIStepper&gt;"
                   moduleName = "FarklePad"
-                  urlString = "file:///Users/scott/Documents/Xcode%20Projects/FarklePad/FarklePad/StarGameView.swift"
-                  timestampString = "443939692.012908"
+                  urlString = "file:///Users/scott/Xcode%20Projects/FarklePad/FarklePad/StarGameView.swift"
+                  timestampString = "449381395.300942"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
                   offsetFromSymbolStart = "16">
                </Location>
                <Location
@@ -38,12 +38,12 @@
                   continueAfterRunningActions = "No"
                   symbolName = "FarklePad.StartGameView.playerStepper.materializeForSet : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIStepper&gt;"
                   moduleName = "FarklePad"
-                  urlString = "file:///Users/scott/Documents/Xcode%20Projects/FarklePad/FarklePad/StarGameView.swift"
-                  timestampString = "443939692.013098"
+                  urlString = "file:///Users/scott/Xcode%20Projects/FarklePad/FarklePad/StarGameView.swift"
+                  timestampString = "449381395.301115"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
                   offsetFromSymbolStart = "16">
                </Location>
                <Location
@@ -52,8 +52,8 @@
                   continueAfterRunningActions = "No"
                   symbolName = "FarklePad.StartGameView.init (FarklePad.StartGameView.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; FarklePad.StartGameView"
                   moduleName = "FarklePad"
-                  urlString = "file:///Users/scott/Documents/Xcode%20Projects/FarklePad/FarklePad/StarGameView.swift"
-                  timestampString = "443939692.013283"
+                  urlString = "file:///Users/scott/Xcode%20Projects/FarklePad/FarklePad/StarGameView.swift"
+                  timestampString = "449381395.301813"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "12"
@@ -66,8 +66,8 @@
                   continueAfterRunningActions = "No"
                   symbolName = "FarklePad.StartGameView.init (FarklePad.StartGameView.Type)() -&gt; FarklePad.StartGameView"
                   moduleName = "FarklePad"
-                  urlString = "file:///Users/scott/Documents/Xcode%20Projects/FarklePad/FarklePad/StarGameView.swift"
-                  timestampString = "443939692.014553"
+                  urlString = "file:///Users/scott/Xcode%20Projects/FarklePad/FarklePad/StarGameView.swift"
+                  timestampString = "449381395.302001"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "12"
@@ -80,8 +80,8 @@
                   continueAfterRunningActions = "No"
                   symbolName = "FarklePad.StartGameView.init (FarklePad.StartGameView.Type)(coder : ObjectiveC.NSCoder) -&gt; FarklePad.StartGameView"
                   moduleName = "FarklePad"
-                  urlString = "file:///Users/scott/Documents/Xcode%20Projects/FarklePad/FarklePad/StarGameView.swift"
-                  timestampString = "443939692.014765"
+                  urlString = "file:///Users/scott/Xcode%20Projects/FarklePad/FarklePad/StarGameView.swift"
+                  timestampString = "449381395.302169"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "12"
@@ -102,7 +102,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
-            endingLineNumber = "24">
+            endingLineNumber = "24"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -112,11 +114,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FarklePad/GameBoard.swift"
-            timestampString = "444632151.577391"
+            timestampString = "449385247.81927"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -128,27 +130,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FarklePad/GameBoard.swift"
-            timestampString = "444632151.577391"
+            timestampString = "449386635.753438"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
             endingLineNumber = "38"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FarklePad/GameBoard.swift"
-            timestampString = "444632151.577391"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -176,7 +162,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FarklePad/GameBoard.swift"
-            timestampString = "444804587.881619"
+            timestampString = "449386635.753438"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
@@ -192,12 +178,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FarklePad/GameBoard.swift"
-            timestampString = "444804587.881619"
+            timestampString = "449386635.753438"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "267"
             endingLineNumber = "267"
-            landmarkName = "viewDidAppear(_:)"
+            landmarkName = "checkThreshold(_:eLabel:curLabel:bIndex:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -238,12 +224,12 @@
                   continueAfterRunningActions = "No"
                   symbolName = "FarklePad.StartGameView.yCount.getter : CoreGraphics.CGFloat"
                   moduleName = "FarklePad"
-                  urlString = "file:///Users/scott/Documents/Xcode%20Projects/FarklePad/FarklePad/StarGameView.swift"
-                  timestampString = "443939692.054173"
+                  urlString = "file:///Users/scott/Xcode%20Projects/FarklePad/FarklePad/StarGameView.swift"
+                  timestampString = "449381395.308856"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
                   offsetFromSymbolStart = "12">
                </Location>
                <Location
@@ -252,12 +238,12 @@
                   continueAfterRunningActions = "No"
                   symbolName = "FarklePad.StartGameView.yCount.setter : CoreGraphics.CGFloat"
                   moduleName = "FarklePad"
-                  urlString = "file:///Users/scott/Documents/Xcode%20Projects/FarklePad/FarklePad/StarGameView.swift"
-                  timestampString = "443939692.054414"
+                  urlString = "file:///Users/scott/Xcode%20Projects/FarklePad/FarklePad/StarGameView.swift"
+                  timestampString = "449381395.309166"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
                   offsetFromSymbolStart = "17">
                </Location>
                <Location
@@ -266,12 +252,12 @@
                   continueAfterRunningActions = "No"
                   symbolName = "FarklePad.StartGameView.yCount.materializeForSet : CoreGraphics.CGFloat"
                   moduleName = "FarklePad"
-                  urlString = "file:///Users/scott/Documents/Xcode%20Projects/FarklePad/FarklePad/StarGameView.swift"
-                  timestampString = "443939692.05463"
+                  urlString = "file:///Users/scott/Xcode%20Projects/FarklePad/FarklePad/StarGameView.swift"
+                  timestampString = "449381395.309424"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
                   offsetFromSymbolStart = "16">
                </Location>
                <Location
@@ -280,8 +266,8 @@
                   continueAfterRunningActions = "No"
                   symbolName = "FarklePad.StartGameView.init (FarklePad.StartGameView.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; FarklePad.StartGameView"
                   moduleName = "FarklePad"
-                  urlString = "file:///Users/scott/Documents/Xcode%20Projects/FarklePad/FarklePad/StarGameView.swift"
-                  timestampString = "443939692.054844"
+                  urlString = "file:///Users/scott/Xcode%20Projects/FarklePad/FarklePad/StarGameView.swift"
+                  timestampString = "449381395.309656"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
@@ -294,8 +280,8 @@
                   continueAfterRunningActions = "No"
                   symbolName = "FarklePad.StartGameView.init (FarklePad.StartGameView.Type)() -&gt; FarklePad.StartGameView"
                   moduleName = "FarklePad"
-                  urlString = "file:///Users/scott/Documents/Xcode%20Projects/FarklePad/FarklePad/StarGameView.swift"
-                  timestampString = "443939692.055054"
+                  urlString = "file:///Users/scott/Xcode%20Projects/FarklePad/FarklePad/StarGameView.swift"
+                  timestampString = "449381395.309996"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
@@ -308,8 +294,8 @@
                   continueAfterRunningActions = "No"
                   symbolName = "FarklePad.StartGameView.init (FarklePad.StartGameView.Type)(coder : ObjectiveC.NSCoder) -&gt; FarklePad.StartGameView"
                   moduleName = "FarklePad"
-                  urlString = "file:///Users/scott/Documents/Xcode%20Projects/FarklePad/FarklePad/StarGameView.swift"
-                  timestampString = "443939692.055265"
+                  urlString = "file:///Users/scott/Xcode%20Projects/FarklePad/FarklePad/StarGameView.swift"
+                  timestampString = "449381395.310173"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
