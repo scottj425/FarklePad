@@ -13,10 +13,15 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let pushManager: PushNotificationManager = PushNotificationManager.pushManager()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        pushManager.delegate = self
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+        pushManager.handlePushReceived(launchOptions)
+        pushManager.sendAppOpen()
+        
         return true
     }
 
@@ -32,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
@@ -106,6 +112,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        println("early")
+        pushManager.handlePushRegistration(deviceToken)
+        println("success")
+    }
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        
+        pushManager.handlePushRegistrationFailure(error)
+        println("ERROR: " + error.localizedDescription)
+    }
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        
+        pushManager.handlePushReceived(userInfo)
+    }
+    
 }
 

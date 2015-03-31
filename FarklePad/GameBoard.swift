@@ -31,6 +31,8 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate, ADBa
     @IBOutlet var farkleLabels: Array<UILabel>!
     override func viewDidLoad() { 
         super.viewDidLoad()
+        var pushManager = PushNotificationManager.pushManager()
+        pushManager.registerForPushNotifications()
         self.canDisplayBannerAds = true
     
         var coinSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("sad", ofType: "wav")!)
@@ -67,6 +69,13 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate, ADBa
             diceImage.image = UIImage(named: "dice_pink.png")
         case "Tan":
             diceImage.image = UIImage(named: "dice_kacki.png")
+        case "Black":
+            diceImage.image = UIImage(named: "dice_black.png")
+            for button in topButtons {
+                
+                button.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+                
+            }
         default:
             diceImage.image = UIImage(named: "dice_white.png")
         }

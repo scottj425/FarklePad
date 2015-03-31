@@ -68,7 +68,7 @@ class userView: UIViewController,UITextFieldDelegate {
         var nameArray = [String]()
         for textbox in playerNames
         {
-            if countElements(textbox.text) > 1{
+            if countElements(textbox.text) > 0{
                 
                 nameArray.append(textbox.text)
                 

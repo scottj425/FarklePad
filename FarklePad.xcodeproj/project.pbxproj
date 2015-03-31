@@ -42,6 +42,7 @@
 		D2B7DAA81A06A65E00015415 /* FarklePadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B7DAA71A06A65E00015415 /* FarklePadTests.swift */; };
 		D2D51E9F1A204D5D006C09F3 /* Button330x30.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D51E9E1A204D5D006C09F3 /* Button330x30.png */; };
 		D2F3797E1AC9045D0038BA22 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F3797D1AC9045D0038BA22 /* iAd.framework */; };
+		D2F872641ACA547D00896F75 /* Pushwoosh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F872631ACA547D00896F75 /* Pushwoosh.framework */; };
 		D2FB001E1A0F24A5008219DF /* StartThresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB001D1A0F24A5008219DF /* StartThresh.swift */; };
 		D2FB00521A0F38B9008219DF /* FarklePenalty.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB00511A0F38B9008219DF /* FarklePenalty.swift */; };
 /* End PBXBuildFile section */
@@ -97,6 +98,8 @@
 		D2B7DAA71A06A65E00015415 /* FarklePadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarklePadTests.swift; sourceTree = "<group>"; };
 		D2D51E9E1A204D5D006C09F3 /* Button330x30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Button330x30.png; sourceTree = "<group>"; };
 		D2F3797D1AC9045D0038BA22 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		D2F872631ACA547D00896F75 /* Pushwoosh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Pushwoosh.framework; sourceTree = "<group>"; };
+		D2F872651ACA560500896F75 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		D2FB001D1A0F24A5008219DF /* StartThresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartThresh.swift; sourceTree = "<group>"; };
 		D2FB00511A0F38B9008219DF /* FarklePenalty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FarklePenalty.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,6 +110,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2F3797E1AC9045D0038BA22 /* iAd.framework in Frameworks */,
+				D2F872641ACA547D00896F75 /* Pushwoosh.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +154,7 @@
 		D2B7DA801A06A65E00015415 = {
 			isa = PBXGroup;
 			children = (
+				D2F872631ACA547D00896F75 /* Pushwoosh.framework */,
 				D2F3797D1AC9045D0038BA22 /* iAd.framework */,
 				D2B7DA8B1A06A65E00015415 /* FarklePad */,
 				D2B7DAA41A06A65E00015415 /* FarklePadTests */,
@@ -192,6 +197,7 @@
 				D2B7DA901A06A65E00015415 /* FarklePad.xcdatamodeld */,
 				D2B7DA8C1A06A65E00015415 /* Supporting Files */,
 				D2095FBA1AC91B4300CF7073 /* photoView.swift */,
+				D2F872651ACA560500896F75 /* Header.h */,
 			);
 			path = FarklePad;
 			sourceTree = "<group>";
@@ -497,10 +503,16 @@
 				CODE_SIGN_ENTITLEMENTS = FarklePad/FarklePad.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FarklePad/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/scott/Xcode Projects/FarklePad/FarklePad/Header.h";
 			};
 			name = Debug;
 		};
@@ -511,10 +523,16 @@
 				CODE_SIGN_ENTITLEMENTS = FarklePad/FarklePad.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FarklePad/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/scott/Xcode Projects/FarklePad/FarklePad/Header.h";
 			};
 			name = Release;
 		};

@@ -9,7 +9,7 @@ import UIKit
 class DicePickerView: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate{
 
     @IBOutlet weak var dpicker: UIPickerView!
-    var colors = ["Blue","Orange","Purple","Tan","White"]
+    var colors = ["Black","Blue","Orange","Purple","Tan","White"]
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
