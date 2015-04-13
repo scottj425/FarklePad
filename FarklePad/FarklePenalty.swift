@@ -25,6 +25,14 @@ class FarklePenalty: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         }
 
     }
+    override func viewDidAppear(animated: Bool) {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let fullVersion = userDefaults.valueForKey("fullversion") as Bool
+        if !fullVersion {
+            self.dismissViewControllerAnimated(false, completion: nil)
+        }
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -13,12 +13,20 @@ class ViewController: UIViewController {
     var clickSound:AVAudioPlayer = AVAudioPlayer()
     override func viewDidLoad() {
         super.viewDidLoad()
+        var pushManager = PushNotificationManager.pushManager()
+        pushManager.registerForPushNotifications()
+        
         var clickSoundfile = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("click", ofType: "wav")!)
         clickSound = AVAudioPlayer(contentsOfURL: clickSoundfile, error: nil)
         clickSound.prepareToPlay()
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+       // dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             let userDefaults = NSUserDefaults.standardUserDefaults()
-            
+            if (userDefaults.objectForKey("fullversion") == nil) {
+                userDefaults.setValue(false, forKey: "fullversion")
+            }
+            if (userDefaults.objectForKey("photos") == nil) {
+                userDefaults.setValue(false, forKey: "photos")
+            }
             if ((userDefaults.objectForKey("dicecolor")) == nil) {
                 userDefaults.setValue("Black", forKey: "dicecolor")
             }
@@ -35,7 +43,7 @@ class ViewController: UIViewController {
                 userDefaults.setValue(false, forKey: "customimage")
             }
 
-        })
+      //  })
     }
 
     override func didReceiveMemoryWarning() {

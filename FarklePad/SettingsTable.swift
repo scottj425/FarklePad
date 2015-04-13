@@ -50,8 +50,44 @@ class SettingsTable: UITableViewController,UIImagePickerControllerDelegate,UINav
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("index: \(indexPath)")
+        let prefs = NSUserDefaults.standardUserDefaults()
+        if indexPath == NSIndexPath(forItem: 0, inSection: 1) {
+            
+            let fullVersion = prefs.valueForKey("fullversion") as Bool
+            if !fullVersion {
+                let alert = UIAlertView(title: "", message: "Please purchase full version upgrade to use this feature.", delegate: self, cancelButtonTitle: "OK")
+                alert.show()
+                return
+            }
+
+        }
+        if indexPath == NSIndexPath(forItem: 1, inSection: 1) {
+            
+            let fullVersion = prefs.valueForKey("fullversion") as Bool
+            if !fullVersion {
+                let alert = UIAlertView(title: "", message: "Please purchase full version upgrade to use this feature.", delegate: self, cancelButtonTitle: "OK")
+                alert.show()
+                return
+            }
+            
+        }
+        if indexPath == NSIndexPath(forItem: 2, inSection: 1) {
+            
+            let fullVersion = prefs.valueForKey("fullversion") as Bool
+            if !fullVersion {
+                let alert = UIAlertView(title: "", message: "Please purchase full version upgrade to use this feature.", delegate: self, cancelButtonTitle: "OK")
+                alert.show()
+                return
+            }
+            
+        }
         if indexPath == NSIndexPath(forItem: 1, inSection: 0) {
-            let prefs = NSUserDefaults.standardUserDefaults()
+            let photos = prefs.valueForKey("photos") as Bool
+            if !photos {
+                let alert = UIAlertView(title: "", message: "Please purchase photo background upgrade to use this feature.", delegate: self, cancelButtonTitle: "OK")
+                alert.show()
+                return
+            }
             var cell: UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
             if (cell.accessoryType == UITableViewCellAccessoryType.Checkmark) {
              cell.accessoryType = UITableViewCellAccessoryType.None

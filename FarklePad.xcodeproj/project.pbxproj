@@ -43,6 +43,10 @@
 		D2D51E9F1A204D5D006C09F3 /* Button330x30.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D51E9E1A204D5D006C09F3 /* Button330x30.png */; };
 		D2F3797E1AC9045D0038BA22 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F3797D1AC9045D0038BA22 /* iAd.framework */; };
 		D2F872641ACA547D00896F75 /* Pushwoosh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F872631ACA547D00896F75 /* Pushwoosh.framework */; };
+		D2F872671ACA65B200896F75 /* threebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = D2F872661ACA65B200896F75 /* threebutton.png */; };
+		D2F872691ACA66D800896F75 /* helpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F872681ACA66D800896F75 /* helpView.swift */; };
+		D2F8726D1ACBA32A00896F75 /* Text.html in Resources */ = {isa = PBXBuildFile; fileRef = D2F8726C1ACBA32A00896F75 /* Text.html */; };
+		D2F8726F1ACBBF0800896F75 /* aboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F8726E1ACBBF0800896F75 /* aboutView.swift */; };
 		D2FB001E1A0F24A5008219DF /* StartThresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB001D1A0F24A5008219DF /* StartThresh.swift */; };
 		D2FB00521A0F38B9008219DF /* FarklePenalty.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB00511A0F38B9008219DF /* FarklePenalty.swift */; };
 /* End PBXBuildFile section */
@@ -100,6 +104,10 @@
 		D2F3797D1AC9045D0038BA22 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		D2F872631ACA547D00896F75 /* Pushwoosh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Pushwoosh.framework; sourceTree = "<group>"; };
 		D2F872651ACA560500896F75 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		D2F872661ACA65B200896F75 /* threebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = threebutton.png; sourceTree = "<group>"; };
+		D2F872681ACA66D800896F75 /* helpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = helpView.swift; sourceTree = "<group>"; };
+		D2F8726C1ACBA32A00896F75 /* Text.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Text.html; sourceTree = "<group>"; };
+		D2F8726E1ACBBF0800896F75 /* aboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aboutView.swift; sourceTree = "<group>"; };
 		D2FB001D1A0F24A5008219DF /* StartThresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartThresh.swift; sourceTree = "<group>"; };
 		D2FB00511A0F38B9008219DF /* FarklePenalty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FarklePenalty.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,6 +135,7 @@
 		D21374EE1A08A62A00C35D36 /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				D2F872661ACA65B200896F75 /* threebutton.png */,
 				D2A13A201A832CA400CF227B /* beachbackground_no_blur.png */,
 				D20CE4901A75EBF8009BF30D /* Pop-up.png */,
 				D21374E81A08A61100C35D36 /* Farkle_beach_background.png */,
@@ -187,6 +196,7 @@
 				D21374D81A0739CC00C35D36 /* StarGameView.swift */,
 				D21374D61A071F4900C35D36 /* dicecolorview.swift */,
 				D21374D21A071C6700C35D36 /* SettingsTable.swift */,
+				D2F8726C1ACBA32A00896F75 /* Text.html */,
 				D2B7DAB11A06A70700015415 /* Images */,
 				D2B7DA8E1A06A65E00015415 /* AppDelegate.swift */,
 				D2B7DA931A06A65E00015415 /* ViewController.swift */,
@@ -198,6 +208,8 @@
 				D2B7DA8C1A06A65E00015415 /* Supporting Files */,
 				D2095FBA1AC91B4300CF7073 /* photoView.swift */,
 				D2F872651ACA560500896F75 /* Header.h */,
+				D2F872681ACA66D800896F75 /* helpView.swift */,
+				D2F8726E1ACBBF0800896F75 /* aboutView.swift */,
 			);
 			path = FarklePad;
 			sourceTree = "<group>";
@@ -334,6 +346,7 @@
 				8A50227C1AB7E5F900A2D7EA /* click.wav in Resources */,
 				D21374EB1A08A61100C35D36 /* Farkle_beach_background.png in Resources */,
 				D2A13A1C1A7EB89D00CF227B /* dice_white.png in Resources */,
+				D2F872671ACA65B200896F75 /* threebutton.png in Resources */,
 				D2A13A1D1A7EB89D00CF227B /* dice_pink.png in Resources */,
 				D21374E51A07462B00C35D36 /* Lion.jpg in Resources */,
 				D21374EC1A08A61100C35D36 /* Farkle_sunset_background.png in Resources */,
@@ -343,6 +356,7 @@
 				D2A13A191A7EB89D00CF227B /* dice_kacki.png in Resources */,
 				D2B7DA9C1A06A65E00015415 /* LaunchScreen.xib in Resources */,
 				D2D51E9F1A204D5D006C09F3 /* Button330x30.png in Resources */,
+				D2F8726D1ACBA32A00896F75 /* Text.html in Resources */,
 				8A50227E1AB7F32F00A2D7EA /* winning.wav in Resources */,
 				D2B7DA991A06A65E00015415 /* Images.xcassets in Resources */,
 			);
@@ -362,9 +376,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2F8726F1ACBBF0800896F75 /* aboutView.swift in Sources */,
 				D2FB001E1A0F24A5008219DF /* StartThresh.swift in Sources */,
 				D2095FBB1AC91B4300CF7073 /* photoView.swift in Sources */,
 				D2B7DA941A06A65E00015415 /* ViewController.swift in Sources */,
+				D2F872691ACA66D800896F75 /* helpView.swift in Sources */,
 				D2A13A1F1A807F2B00CF227B /* WinThresh.swift in Sources */,
 				D2B7DA921A06A65E00015415 /* FarklePad.xcdatamodeld in Sources */,
 				D21374D91A0739CC00C35D36 /* StarGameView.swift in Sources */,

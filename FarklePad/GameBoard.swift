@@ -31,10 +31,11 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate, ADBa
     @IBOutlet var farkleLabels: Array<UILabel>!
     override func viewDidLoad() { 
         super.viewDidLoad()
-        var pushManager = PushNotificationManager.pushManager()
-        pushManager.registerForPushNotifications()
-        self.canDisplayBannerAds = true
-    
+        let pref = NSUserDefaults.standardUserDefaults()
+        let fullversion = pref.valueForKey("fullversion") as Bool
+        if (!fullversion) {
+            self.canDisplayBannerAds = true
+        }
         var coinSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("sad", ofType: "wav")!)
         
         audioPlayer = AVAudioPlayer(contentsOfURL: coinSound, error: nil)

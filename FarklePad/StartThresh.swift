@@ -25,9 +25,17 @@ class StartThresh: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate
             apicker.selectRow(find(amounts,thresh)!, inComponent: 0, animated: false)
             
         }
+        
 
     }
+    override func viewDidAppear(animated: Bool) {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let fullVersion = userDefaults.valueForKey("fullversion") as Bool
+        if !fullVersion {
+            self.dismissViewControllerAnimated(false, completion: nil)
+        }
 
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
