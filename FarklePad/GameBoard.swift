@@ -32,25 +32,25 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate, ADBa
     override func viewDidLoad() { 
         super.viewDidLoad()
         let pref = NSUserDefaults.standardUserDefaults()
-        let fullversion = pref.valueForKey("fullversion") as Bool
+        let fullversion = pref.valueForKey("fullversion") as! Bool
         if (!fullversion) {
             self.canDisplayBannerAds = true
         }
-        var coinSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("sad", ofType: "wav")!)
+        let coinSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("sad", ofType: "wav")!)
         
-        audioPlayer = AVAudioPlayer(contentsOfURL: coinSound, error: nil)
+        audioPlayer = try! AVAudioPlayer(contentsOfURL: coinSound)
         audioPlayer.prepareToPlay()
-        var clickSoundfile = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("click", ofType: "wav")!)
-        clickSound = AVAudioPlayer(contentsOfURL: clickSoundfile, error: nil)
+        let clickSoundfile = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("click", ofType: "wav")!)
+        clickSound = try! AVAudioPlayer(contentsOfURL: clickSoundfile)
         clickSound.prepareToPlay()
-        var winSoundfile = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("winning", ofType: "wav")!)
-        winSound = AVAudioPlayer(contentsOfURL: winSoundfile, error: nil)
+        let winSoundfile = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("winning", ofType: "wav")!)
+        winSound = try! AVAudioPlayer(contentsOfURL: winSoundfile)
         winSound.prepareToPlay()
         let userDefaults = NSUserDefaults.standardUserDefaults()
         let names:Array = userDefaults.arrayForKey("names")!
         for var i=0;i<names.count;i++
         {
-            playerButtons[i].setTitle(String(names[i] as NSString), forState: UIControlState.Normal)
+            playerButtons[i].setTitle(String(names[i] as! NSString), forState: UIControlState.Normal)
             playerButtons[i].hidden=false
         }
         playerButtons[0].setTitleColor(UIColor.yellowColor(), forState: .Normal)
@@ -58,7 +58,7 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate, ADBa
         if ((userDefaults.objectForKey("dicecolor")) == nil) {
             userDefaults.setValue("White", forKey: "dicecolor")
         }
-        switch userDefaults.objectForKey("dicecolor") as String {
+        switch userDefaults.objectForKey("dicecolor") as! String {
         case "White":
             diceImage.image = UIImage(named: "dice_white.png")
             
@@ -85,28 +85,28 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate, ADBa
         if ((userDefaults.objectForKey("threshold")) == nil) {
             userDefaults.setValue("500", forKey: "threshold")
         }
-        thresh = userDefaults.objectForKey("threshold") as String
+        thresh = userDefaults.objectForKey("threshold") as! String
         threshold.text = "Start Threshold = \(thresh)"
         if ((userDefaults.objectForKey("winthreshold")) == nil) {
             userDefaults.setValue("10000", forKey: "winthreshold")
         }
-        winAmount = userDefaults.objectForKey("winthreshold") as String
+        winAmount = userDefaults.objectForKey("winthreshold") as! String
         
         //Set farkle
         if ((userDefaults.objectForKey("farkle")) == nil) {
             userDefaults.setValue("-500", forKey: "farkle")
         }
-        let farkle = userDefaults.objectForKey("farkle") as String
+        let farkle = userDefaults.objectForKey("farkle") as! String
         if ((userDefaults.objectForKey("winthreshold")) == nil) {
             userDefaults.setValue("10000", forKey: "winthreshold")
         }
-        let winthresh = userDefaults.objectForKey("winthreshold") as String
+        let winthresh = userDefaults.objectForKey("winthreshold") as! String
         
         farkleLabel.setTitle("Farkle = \(farkle)", forState: UIControlState.Normal)
         if (userDefaults.valueForKey("customimage") != nil) {
-            var custombg = userDefaults.valueForKey("customimage") as Bool
+            var custombg = userDefaults.valueForKey("customimage") as! Bool
             if (custombg) {
-                var imageData = userDefaults.valueForKey("background") as NSData
+                var imageData = userDefaults.valueForKey("background") as! NSData
                 background.image = UIImage(data: imageData)
             } else {
                 background.image = UIImage(named: "Farkle_beach_background.png")
@@ -122,19 +122,19 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate, ADBa
         // Dispose of any resources that can be recreated.
     }
     @IBAction func click(sender: UIButton) {
-        var text = sender.currentTitle
-        var start = text?.rangeOfString(" = ")?.endIndex
-        var amount = text?.substringFromIndex(start!).toInt()
-        var prevamount = turnScore.text?.toInt()
-        var total = amount! + prevamount!
+        let text = sender.currentTitle
+        let start = text?.rangeOfString(" = ")?.endIndex
+        let amount = Int((text?.substringFromIndex(start!))!)
+        let prevamount = Int(turnScore.text!)
+        let total = amount! + prevamount!
         turnScore.text = String(total)
         clickSound.play()
         
     }
     @IBAction func farkleclick(sender: UIButton) {
-        var text = sender.currentTitle
-        var start = text?.rangeOfString(" = ")?.endIndex
-        var amount = text?.substringFromIndex(start!).toInt()
+        let text = sender.currentTitle
+        let start = text?.rangeOfString(" = ")?.endIndex
+        let amount = Int(text!.substringFromIndex(start!))
         turnScore.text = "0"
         audioPlayer.play()
         bankClick(self)
@@ -181,13 +181,13 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate, ADBa
         
         if (currentLabel > startLabel && currentLabel < endLabel)
         {
-            let prevScore = scoreLabels[currentLabel - 1].text?.toInt()
-            curScore =  prevScore! + turnScore.text!.toInt()!
-            if (turnScore.text!.toInt()! == 0) {
+            let prevScore = Int((scoreLabels[currentLabel - 1].text!))
+            curScore =  prevScore! + Int(turnScore.text!)!
+            if (Int(turnScore.text!)! == 0) {
                 if (farkleLabels[bIndex].text == "FF") {
                     var text = farkleLabel.titleLabel?.text
                     var start = text?.rangeOfString(" = ")?.endIndex
-                    var amount = text?.substringFromIndex(start!).toInt()
+                    var amount = Int((text?.substringFromIndex(start!))!)
                     curScore = prevScore! + amount!
                     farkleLabels[bIndex].text=""
                 } else {
@@ -201,12 +201,12 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate, ADBa
             
         } else if (currentLabel == startLabel) {
             
-            curScore = turnScore.text!.toInt()!
-            if (turnScore.text!.toInt()! == 0) {
+            curScore = Int(turnScore.text!)!
+            if (Int(turnScore.text!)! == 0) {
                 if (farkleLabels[bIndex].text == "FF") {
                     var text = farkleLabel.titleLabel?.text
                     var start = text?.rangeOfString(" = ")?.endIndex
-                    var amount = text?.substringFromIndex(start!).toInt()
+                    var amount = Int((text?.substringFromIndex(start!))!)
                     curScore = curScore + amount!
                     farkleLabels[bIndex].text=""
                 } else {
@@ -220,21 +220,21 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate, ADBa
             
             scoreLabels[currentLabel].text = "\(curScore)"
         } else if (currentLabel == endLabel) {
-            let prevScore = scoreLabels[endLabel - 1].text?.toInt()
-            curScore =  prevScore! + turnScore.text!.toInt()!
+            let prevScore = Int((scoreLabels[endLabel - 1].text!))
+            curScore =  prevScore! + Int(turnScore.text!)!
             for var i=startLabel;i<endLabel;i++
             {
                scoreLabels[i].text = ""
             }
-            if (turnScore.text!.toInt()! == 0) {
+            if (Int(turnScore.text!)! == 0) {
                 if (farkleLabels[bIndex].text == "FF") {
-                    var text = farkleLabel.titleLabel?.text
-                    var start = text?.rangeOfString(" = ")?.endIndex
-                    var amount = text?.substringFromIndex(start!).toInt()
+                    let text = farkleLabel.titleLabel?.text
+                    let start = text?.rangeOfString(" = ")?.endIndex
+                    let amount = Int((text?.substringFromIndex(start!))!)
                     curScore = prevScore! + amount!
                     farkleLabels[bIndex].text=""
                 } else {
-                    println("HERE")
+                    print("HERE")
                     farkleLabels[bIndex].text = farkleLabels[bIndex].text! + "F"
                 }
                 
@@ -246,7 +246,7 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate, ADBa
         }
         
         //win check goes here
-        println("clicked")
+        print("clicked")
         checkForWin(curScore, player: bIndex)
         if playStatus[bIndex] < 2 {
         playStatus[bIndex] = 1
@@ -261,11 +261,11 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate, ADBa
     
     func checkThreshold(sLabel:Int, eLabel:Int, curLabel:Int, bIndex:Int) -> Int {
 
-        var text = threshold.text
-        var start = text?.rangeOfString(" = ")?.endIndex
-        var amount = text?.substringFromIndex(start!).toInt()
-        if (playStatus[bIndex] == 0 && turnScore.text?.toInt() < amount) {
-            if (turnScore.text?.toInt() == 0) {
+        let text = threshold.text
+        let start = text?.rangeOfString(" = ")?.endIndex
+        let amount = Int(text!.substringFromIndex(start!))
+        if (playStatus[bIndex] == 0 && Int(turnScore.text!) < amount) {
+            if (Int(turnScore.text!) == 0) {
                 if (curLabel == eLabel) {
                     for var i = sLabel; i < eLabel; i++ {
                         scoreLabels[i].text = ""
@@ -278,7 +278,7 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate, ADBa
                 
                 return 1
             }
-                var alert = UIAlertController(title: "FarklePad", message: "You must reach the starting threshold to get on the board.", preferredStyle: UIAlertControllerStyle.Alert)
+                let alert = UIAlertController(title: "FarklePad", message: "You must reach the starting threshold to get on the board.", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                 showViewController(alert, sender: self)
             
@@ -311,8 +311,7 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate, ADBa
 
     }
     override func viewDidAppear(animated: Bool) {
-        var popoverContent = self.storyboard?.instantiateViewControllerWithIdentifier("PopOver") as PopOverView
-        var nav = UINavigationController(rootViewController: popoverContent)
+        let popoverContent = self.storyboard?.instantiateViewControllerWithIdentifier("PopOver") as! PopOverView
        // nav.modalPresentationStyle = UIModalPresentationStyle.Popover
         //var popover = nav.popoverPresentationController
        // popoverContent.preferredContentSize = CGSizeMake(500,600)
@@ -322,17 +321,18 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate, ADBa
         
         popoverContent.titleString = "FarklePad"
         popoverContent.startThresh = thresh
-        var player1 = playerButtons[0].titleLabel?.text!
+        let player1 = playerButtons[0].titleLabel?.text!
         popoverContent.winAmount = winAmount
         popoverContent.player1 = player1!
         popoverContent.msgNum = 0
         if (!viewLoaded) {
+        
         self.presentViewController(popoverContent, animated: true, completion: nil)
             viewLoaded = true
         }
     }
     func checkForWin(curValue:Int, player:Int)->Bool {
-        var winValue = winAmount.toInt()
+        var winValue = Int(winAmount)
         if (curValue >= winValue) {
             for status in playStatus {
                 if status == 2 {
@@ -340,8 +340,8 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate, ADBa
                 }
             }
             playStatus[player] = 2
-            println(playStatus)
-            var popoverContent = self.storyboard?.instantiateViewControllerWithIdentifier("PopOver") as PopOverView
+            print(playStatus)
+            var popoverContent = self.storyboard?.instantiateViewControllerWithIdentifier("PopOver") as! PopOverView
           //  var nav = UINavigationController(rootViewController: popoverContent)
             var name:String = playerButtons[player].titleLabel!.text!
             popoverContent.titleString = "FarklePad"
@@ -357,23 +357,26 @@ class GameBoard: UIViewController, UIPopoverPresentationControllerDelegate, ADBa
     }
     func gameOver() {
         
-        println("Game Over")
+        print("Game Over")
         var prevScore = 0
         var curLabel = 0
-        println(scoreLabels.count)
+        print(scoreLabels.count)
         for i in 0...(scoreLabels.count - 1) {
-            if let score = scoreLabels[i].text?.toInt() {
+            if let score = Int(scoreLabels[i].text!) {
                 if (score > prevScore) {
                     prevScore = score
                     curLabel = i
                 }
             }
         }
-         var popoverContent = self.storyboard?.instantiateViewControllerWithIdentifier("PopOver") as PopOverView
+         var popoverContent = self.storyboard?.instantiateViewControllerWithIdentifier("PopOver") as! PopOverView
         popoverContent.titleString = "We have a winner!"
         popoverContent.winAmount = String(prevScore)
         popoverContent.player1 = playerButtons[curLabel/10].titleLabel!.text!
         popoverContent.msgNum = 2
+        while (audioPlayer.playing) {
+            sleep(1)
+        }
         winSound.play()
         self.presentViewController(popoverContent, animated: true, completion: nil)
         

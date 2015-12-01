@@ -20,14 +20,14 @@ class FarklePenalty: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         let userDefaults = NSUserDefaults.standardUserDefaults()
         if let farkle = userDefaults.objectForKey("farkle") as? String {
             
-            fpicker.selectRow(find(amounts,farkle)!, inComponent: 0, animated: false)
+            fpicker.selectRow(amounts.indexOf(farkle)!, inComponent: 0, animated: false)
             
         }
 
     }
     override func viewDidAppear(animated: Bool) {
         let userDefaults = NSUserDefaults.standardUserDefaults()
-        let fullVersion = userDefaults.valueForKey("fullversion") as Bool
+        let fullVersion = userDefaults.valueForKey("fullversion") as! Bool
         if !fullVersion {
             self.dismissViewControllerAnimated(false, completion: nil)
         }
@@ -43,7 +43,7 @@ class FarklePenalty: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        println(amounts.count)
+        print(amounts.count)
         return amounts.count
     }
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {

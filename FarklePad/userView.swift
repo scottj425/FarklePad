@@ -16,7 +16,7 @@ class userView: UIViewController,UITextFieldDelegate,UIGestureRecognizerDelegate
     @IBOutlet weak var xbutton: UIButton!
     @IBOutlet var playerLabels: Array<UILabel>!
     var labelCount:Int = 0
-
+    var keyboardOut = false;
     override func viewDidLoad() {
             
             startButton.layer.borderWidth = 0.5
@@ -30,7 +30,7 @@ class userView: UIViewController,UITextFieldDelegate,UIGestureRecognizerDelegate
             tb.delegate = self
         }
         let prefs = NSUserDefaults.standardUserDefaults()
-        let fullversion = prefs.valueForKey("fullversion") as Bool
+        let fullversion = prefs.valueForKey("fullversion") as! Bool
         if !fullversion {
             
             for var i = 2; i < playerNames.count; i++ {
@@ -38,7 +38,16 @@ class userView: UIViewController,UITextFieldDelegate,UIGestureRecognizerDelegate
                 playerNames[i].enabled = false
             }
         }
-
+        print("here!")
+        if ((prefs.arrayForKey("names")) != nil) {
+            let names:Array = prefs.arrayForKey("names")!
+            for var i=0;i<names.count;i++
+            {
+                print(names[i] as! NSString)
+                playerNames[i].text = String(names[i] as! NSString)
+            }
+            
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,16 +55,21 @@ class userView: UIViewController,UITextFieldDelegate,UIGestureRecognizerDelegate
         // Dispose of any resources that can be recreated.
 }
     func keyboardWillShow(sender: NSNotification) {
-        self.view.frame.origin.y -= 150
+        if (!keyboardOut) {
+            keyboardOut = true
+            self.view.frame.origin.y -= 150
+        }
     }
     func keyboardWillHide(sender: NSNotification) {
+        
         self.view.frame.origin.y += 150
+        keyboardOut = false;
     }
 
     @IBAction func StartClick(sender: AnyObject) {
         var textEmpty: Bool = false
         //
-        if (countElements(playerNames[0].text) == 0 || countElements(playerNames[1].text) == 0) {
+        if (playerNames[0].text?.characters.count == 0 || playerNames[1].text?.characters.count == 0) {
             var alert = UIAlertController(title: "", message: "Farklepad Requires a minimum of 2 players.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
@@ -64,7 +78,7 @@ class userView: UIViewController,UITextFieldDelegate,UIGestureRecognizerDelegate
         for textbox in playerNames
         {
             if textbox.enabled {
-                if countElements(textbox.text) == 0 {
+                if textbox.text?.characters.count == 0 {
                     textEmpty = true
                 } else {
                     if (textEmpty) {
@@ -83,14 +97,17 @@ class userView: UIViewController,UITextFieldDelegate,UIGestureRecognizerDelegate
         var nameArray = [String]()
         for textbox in playerNames
         {
-            if countElements(textbox.text) > 0{
+            if textbox.text?.characters.count > 0{
                 
-                nameArray.append(textbox.text)
+                nameArray.append(textbox.text!)
                 
             }
         }
         userDefaults.setObject(nameArray, forKey: "names")
         
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("GameBoard") as UIViewController!
+        self.presentViewController(vc, animated: false, completion: nil)
         
         
     }
@@ -107,9 +124,9 @@ class userView: UIViewController,UITextFieldDelegate,UIGestureRecognizerDelegate
         
         
     }
-    func textField(textField: UITextField!, shouldChangeCharactersInRange range: NSRange, replacementString string: String!) -> Bool {
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         
-        let newLength = countElements(textField.text!) + countElements(string!) - range.length
+        let newLength = textField.text!.characters.count + string.characters.count - range.length
         return newLength <= 12 //Bool
         
     }
@@ -123,15 +140,15 @@ class userView: UIViewController,UITextFieldDelegate,UIGestureRecognizerDelegate
     }
     
     @IBAction func click(sender: UITapGestureRecognizer) {
-        var touch = sender.locationInView(self.view)
-        println(touch)
+        let touch = sender.locationInView(self.view)
+        print(touch)
         for tb in playerNames {
-            var maxX = tb.frame.maxX
-            var minX = tb.frame.minX
-            var maxY = tb.frame.maxY
-            var minY = tb.frame.minY
+            let maxX = tb.frame.maxX
+            let minX = tb.frame.minX
+            let maxY = tb.frame.maxY
+            let minY = tb.frame.minY
             if (touch.x <= maxX && touch.x >= minX && touch.y <= maxY && touch.y >= minY) {
-                println("TextField!")
+                print("TextField!")
                 return
             }
         }

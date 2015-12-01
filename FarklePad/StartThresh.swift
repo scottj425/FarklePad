@@ -22,7 +22,7 @@ class StartThresh: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate
         let userDefaults = NSUserDefaults.standardUserDefaults()
         if let thresh = userDefaults.objectForKey("threshold") as? String {
             
-            apicker.selectRow(find(amounts,thresh)!, inComponent: 0, animated: false)
+            apicker.selectRow(amounts.indexOf(thresh)!, inComponent: 0, animated: false)
             
         }
         
@@ -30,7 +30,7 @@ class StartThresh: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate
     }
     override func viewDidAppear(animated: Bool) {
         let userDefaults = NSUserDefaults.standardUserDefaults()
-        let fullVersion = userDefaults.valueForKey("fullversion") as Bool
+        let fullVersion = userDefaults.valueForKey("fullversion") as! Bool
         if !fullVersion {
             self.dismissViewControllerAnimated(false, completion: nil)
         }

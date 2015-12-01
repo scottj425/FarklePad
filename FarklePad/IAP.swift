@@ -27,7 +27,7 @@ class IAPViewController: UIViewController, SKProductsRequestDelegate, SKPaymentT
 }
     func fetchAvailableProducts() {
         let productID:NSSet = NSSet(objects: "farklepadfull","photobackgrounds")
-        let productsRequest:SKProductsRequest = SKProductsRequest(productIdentifiers: productID);
+        let productsRequest:SKProductsRequest = SKProductsRequest(productIdentifiers: productID as! Set<String>);
         productsRequest.delegate = self;
         productsRequest.start();
     }
@@ -38,8 +38,8 @@ class IAPViewController: UIViewController, SKProductsRequestDelegate, SKPaymentT
         {
             fullproduct = products[0] as SKProduct
             photoproduct = products[1] as SKProduct
-            println("Fetched: " + fullproduct.productIdentifier)
-            println("Fetched: " + photoproduct.productIdentifier)
+            print("Fetched: " + fullproduct.productIdentifier)
+            print("Fetched: " + photoproduct.productIdentifier)
         }
     }
     
@@ -50,11 +50,11 @@ class IAPViewController: UIViewController, SKProductsRequestDelegate, SKPaymentT
     
     func purchaseMyProduct(product: SKProduct) {
         if (self.canMakePurchases()) {
-            println("Purchases are allowed ...")
-            var payment: SKPayment = SKPayment(product: product)
+            print("Purchases are allowed ...")
+            let payment: SKPayment = SKPayment(product: product)
             SKPaymentQueue.defaultQueue().addPayment(payment)
         } else {
-            println("Purchases are disabled in your device")
+            print("Purchases are disabled in your device")
         }
     }
     override func viewWillDisappear(animated: Bool) {
@@ -67,17 +67,17 @@ class IAPViewController: UIViewController, SKProductsRequestDelegate, SKPaymentT
         }
      purchaseMyProduct(fullproduct)
     }
-    func paymentQueue(queue: SKPaymentQueue!, updatedTransactions transactions: [AnyObject]!)    {
+    func paymentQueue(queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction])    {
         for transaction:AnyObject in transactions {
             if let trans:SKPaymentTransaction = transaction as? SKPaymentTransaction{
                 switch trans.transactionState {
                 case .Purchased:
                     
-                    println("purchased")
-                    var prodID = trans.payment.productIdentifier
+                    print("purchased")
+                    let prodID = trans.payment.productIdentifier
                     
                     if (prodID == "farklepadfull") {
-                        println("full version!")
+                        print("full version!")
                         let prefs = NSUserDefaults.standardUserDefaults()
                         prefs.setValue(true, forKey: "fullversion")
                     } else if (prodID == "photobackgrounds") {
@@ -85,18 +85,18 @@ class IAPViewController: UIViewController, SKProductsRequestDelegate, SKPaymentT
                         prefs.setValue(true, forKey: "photos")
                         
                     }
-                    SKPaymentQueue.defaultQueue().finishTransaction(transaction as SKPaymentTransaction)
+                    SKPaymentQueue.defaultQueue().finishTransaction(transaction as! SKPaymentTransaction)
                     break;
                 case .Failed:
                     let alert = UIAlertView(title: "", message: "Purchase was not successfully completed.", delegate: self, cancelButtonTitle: "OK")
                     alert.show()
-                    SKPaymentQueue.defaultQueue().finishTransaction(transaction as SKPaymentTransaction)
+                    SKPaymentQueue.defaultQueue().finishTransaction(transaction as! SKPaymentTransaction)
                     break;
                 case .Restored:
                     SKPaymentQueue.defaultQueue().restoreCompletedTransactions()
                     let alert = UIAlertView(title: "", message: "Successfully restored previous purchases.", delegate: self, cancelButtonTitle: "OK")
                     alert.show()
-                    var prodID = trans.payment.productIdentifier
+                    let prodID = trans.payment.productIdentifier
                     if (prodID == "farlkepadfull") {
                         let prefs = NSUserDefaults.standardUserDefaults()
                         prefs.setValue(true, forKey: "fullversion")
@@ -112,10 +112,10 @@ class IAPViewController: UIViewController, SKProductsRequestDelegate, SKPaymentT
             }
         }
     }
-    func paymentQueueRestoreCompletedTransactionsFinished(queue: SKPaymentQueue!) {
+    func paymentQueueRestoreCompletedTransactionsFinished(queue: SKPaymentQueue) {
         for transaction in queue.transactions {
-            var txn: SKPaymentTransaction = transaction as SKPaymentTransaction
-            println(txn.payment.productIdentifier)
+            let txn: SKPaymentTransaction = transaction as SKPaymentTransaction
+            print(txn.payment.productIdentifier)
         }
     }
     @IBAction func restore(sender: AnyObject) {
@@ -134,14 +134,16 @@ class IAPViewController: UIViewController, SKProductsRequestDelegate, SKPaymentT
         }
         purchaseMyProduct(photoproduct)
     }
-    func request(request: SKRequest!, didFailWithError error: NSError!) {
-        if error != nil {
-          
-                    let alert = UIAlertView(title: "", message: "Error connecting to AppStore. Please check internet connection and try again.", delegate: self, cancelButtonTitle: "OK")
-                    alert.show()
-            
-            
+    func request(request: SKRequest, didFailWithError error: NSError) {
+        if (error.code > 0) {
+            let alert = UIAlertView(title: "", message: "Error connecting to AppStore. Please check internet connection and try again.", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+
         }
+          
+        
+            
+        
     }
 }
 

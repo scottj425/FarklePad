@@ -20,7 +20,7 @@ class PopOverView: UIViewController {
     override func viewDidLoad() {
       //self.view.alpha = 0.4
       self.view.backgroundColor = UIColor.clearColor()
-        var popup: UIImage = UIImage(named: "Pop-up.png")!
+        let popup: UIImage = UIImage(named: "Pop-up.png")!
         bgimage = UIImageView(image: popup)
         bgimage.center = self.view.center
         self.view.addSubview(bgimage)
@@ -29,7 +29,7 @@ class PopOverView: UIViewController {
         
         label.text = titleString
         self.view.addSubview(label)
-        var dismissLabel:UILabel = UILabel(frame: CGRectMake(bgimage.frame.origin.x + 10, bgimage.frame.origin.y+25, bgimage.frame.size.width, 500))
+        let dismissLabel:UILabel = UILabel(frame: CGRectMake(bgimage.frame.origin.x + 10, bgimage.frame.origin.y+25, bgimage.frame.size.width, 500))
         dismissLabel.textAlignment = NSTextAlignment.Center
         dismissLabel.text = "- tap anywhere to dismiss -"
         dismissLabel.font = UIFont.systemFontOfSize(12)
@@ -48,7 +48,7 @@ class PopOverView: UIViewController {
     @IBAction func tapped(sender: AnyObject) {
         if (msgNum == 2) {
             var storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            var vc : ViewController = storyboard.instantiateViewControllerWithIdentifier("mainScreen") as ViewController
+            var vc : ViewController = storyboard.instantiateViewControllerWithIdentifier("mainScreen") as! ViewController
             self.presentViewController(vc, animated: false, completion: nil)
             return
         }
@@ -59,13 +59,13 @@ class PopOverView: UIViewController {
         // Dispose of any resources that can be recreated.
 }
     func welcomegame() {
-        var Label1:UILabel = UILabel(frame: CGRectMake(bgimage.frame.origin.x+5, bgimage.frame.origin.y, 480, 200))
+        let Label1:UILabel = UILabel(frame: CGRectMake(bgimage.frame.origin.x+5, bgimage.frame.origin.y, 480, 200))
         Label1.textAlignment = NSTextAlignment.Center
         Label1.lineBreakMode = NSLineBreakMode.ByWordWrapping
         Label1.numberOfLines = 4
         Label1.text = " Welcome to your game! You need at least \(startThresh) points to get on the board and \(winAmount) points to win. Let's play!"
         self.view.addSubview(Label1)
-        var Label2:UILabel = UILabel(frame: CGRectMake(bgimage.frame.origin.x+5, bgimage.frame.origin.y+70, 480, 200))
+        let Label2:UILabel = UILabel(frame: CGRectMake(bgimage.frame.origin.x+5, bgimage.frame.origin.y+70, 480, 200))
         Label2.textAlignment = NSTextAlignment.Center
         Label2.text = "\(player1)'s turn"
         Label2.font = UIFont.boldSystemFontOfSize(25)
@@ -73,13 +73,13 @@ class PopOverView: UIViewController {
     }
     func winThreshHit() {
         
-        var Label1:UILabel = UILabel(frame: CGRectMake(bgimage.frame.origin.x+5, bgimage.frame.origin.y+80, 480, 200))
+        let Label1:UILabel = UILabel(frame: CGRectMake(bgimage.frame.origin.x+5, bgimage.frame.origin.y+80, 480, 200))
         Label1.textAlignment = NSTextAlignment.Center
         Label1.lineBreakMode = NSLineBreakMode.ByWordWrapping
         Label1.numberOfLines = 4
         Label1.text = " Every other player will now have one chance to beat \(player1)’s high score for the win!"
         self.view.addSubview(Label1)
-        var Label2:UILabel = UILabel(frame: CGRectMake(bgimage.frame.origin.x+5, bgimage.frame.origin.y, 480, 200))
+        let Label2:UILabel = UILabel(frame: CGRectMake(bgimage.frame.origin.x+5, bgimage.frame.origin.y, 480, 200))
         Label2.textAlignment = NSTextAlignment.Center
         Label2.text = player1 + " reached " + winAmount + " points!"
         Label2.font = UIFont.boldSystemFontOfSize(25)
@@ -88,13 +88,13 @@ class PopOverView: UIViewController {
     }
     func gameOver() {
         
-        var Label1:UILabel = UILabel(frame: CGRectMake(bgimage.frame.origin.x+5, bgimage.frame.origin.y+80, 480, 200))
+        let Label1:UILabel = UILabel(frame: CGRectMake(bgimage.frame.origin.x+5, bgimage.frame.origin.y+80, 480, 200))
         Label1.textAlignment = NSTextAlignment.Center
         Label1.lineBreakMode = NSLineBreakMode.ByWordWrapping
         Label1.numberOfLines = 4
         Label1.text = "Congratulations \(player1)! Thank you for playing farkle with FarklePad. Your farkle game scorekeeper. Please check out other Out Of Range apps at http://www.outofrange.productions"
         self.view.addSubview(Label1)
-        var Label2:UILabel = UILabel(frame: CGRectMake(bgimage.frame.origin.x+5, bgimage.frame.origin.y, 480, 200))
+        let Label2:UILabel = UILabel(frame: CGRectMake(bgimage.frame.origin.x+5, bgimage.frame.origin.y, 480, 200))
         Label2.textAlignment = NSTextAlignment.Center
         Label2.text = player1 + " won with " + winAmount + " points!"
         Label2.font = UIFont.boldSystemFontOfSize(25)

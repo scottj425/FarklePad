@@ -13,7 +13,7 @@ class helpView: UIViewController {
     override func viewDidLoad() {
         var try6 = NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource("Text", ofType:"html")!)
         
-        var request = NSURLRequest(URL: try6!);
+        var request = NSURLRequest(URL: try6);
         webView.loadRequest(request)
         webView.layer.cornerRadius = 10
         webView.layer.borderWidth = 0.5

@@ -13,11 +13,11 @@ class ViewController: UIViewController {
     var clickSound:AVAudioPlayer = AVAudioPlayer()
     override func viewDidLoad() {
         super.viewDidLoad()
-        var pushManager = PushNotificationManager.pushManager()
+        let pushManager = PushNotificationManager.pushManager()
         pushManager.registerForPushNotifications()
         
-        var clickSoundfile = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("click", ofType: "wav")!)
-        clickSound = AVAudioPlayer(contentsOfURL: clickSoundfile, error: nil)
+        let clickSoundfile = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("click", ofType: "wav")!)
+        clickSound = try! AVAudioPlayer(contentsOfURL: clickSoundfile)
         clickSound.prepareToPlay()
        // dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             let userDefaults = NSUserDefaults.standardUserDefaults()

@@ -18,10 +18,10 @@ class SettingsTable: UITableViewController,UIImagePickerControllerDelegate,UINav
     override func viewDidLoad() {
         super.viewDidLoad()
         let userDefaults = NSUserDefaults.standardUserDefaults()
-        colorLabel.text = (userDefaults.objectForKey("dicecolor") as String)
-        threshLabel.text = (userDefaults.objectForKey("threshold") as String)
-        winLabel.text = (userDefaults.objectForKey("winthreshold") as String)
-        farkleLabel.text = (userDefaults.objectForKey("farkle") as String)
+        colorLabel.text = (userDefaults.objectForKey("dicecolor") as! String)
+        threshLabel.text = (userDefaults.objectForKey("threshold") as! String)
+        winLabel.text = (userDefaults.objectForKey("winthreshold") as! String)
+        farkleLabel.text = (userDefaults.objectForKey("farkle") as! String)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateColorLabel:", name: "diceColorChange", object: nil)
     }
@@ -42,18 +42,18 @@ class SettingsTable: UITableViewController,UIImagePickerControllerDelegate,UINav
         if ((userDefaults.objectForKey("farkle")) == nil) {
             userDefaults.setValue("-500", forKey: "farkle")
         }
-        colorLabel.text = (userDefaults.objectForKey("dicecolor") as String)
-        threshLabel.text = (userDefaults.objectForKey("threshold") as String)
-       farkleLabel.text = (userDefaults.objectForKey("farkle") as String)
-        winLabel.text = (userDefaults.objectForKey("winthreshold") as String)
+        colorLabel.text = (userDefaults.objectForKey("dicecolor") as! String)
+        threshLabel.text = (userDefaults.objectForKey("threshold") as! String)
+       farkleLabel.text = (userDefaults.objectForKey("farkle") as! String)
+        winLabel.text = (userDefaults.objectForKey("winthreshold") as! String)
 
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("index: \(indexPath)")
+        print("index: \(indexPath)")
         let prefs = NSUserDefaults.standardUserDefaults()
         if indexPath == NSIndexPath(forItem: 0, inSection: 1) {
             
-            let fullVersion = prefs.valueForKey("fullversion") as Bool
+            let fullVersion = prefs.valueForKey("fullversion") as! Bool
             if !fullVersion {
                 let alert = UIAlertView(title: "", message: "Please purchase full version upgrade to use this feature.", delegate: self, cancelButtonTitle: "OK")
                 alert.show()
@@ -63,7 +63,7 @@ class SettingsTable: UITableViewController,UIImagePickerControllerDelegate,UINav
         }
         if indexPath == NSIndexPath(forItem: 1, inSection: 1) {
             
-            let fullVersion = prefs.valueForKey("fullversion") as Bool
+            let fullVersion = prefs.valueForKey("fullversion") as! Bool
             if !fullVersion {
                 let alert = UIAlertView(title: "", message: "Please purchase full version upgrade to use this feature.", delegate: self, cancelButtonTitle: "OK")
                 alert.show()
@@ -73,7 +73,7 @@ class SettingsTable: UITableViewController,UIImagePickerControllerDelegate,UINav
         }
         if indexPath == NSIndexPath(forItem: 2, inSection: 1) {
             
-            let fullVersion = prefs.valueForKey("fullversion") as Bool
+            let fullVersion = prefs.valueForKey("fullversion") as! Bool
             if !fullVersion {
                 let alert = UIAlertView(title: "", message: "Please purchase full version upgrade to use this feature.", delegate: self, cancelButtonTitle: "OK")
                 alert.show()
@@ -82,7 +82,7 @@ class SettingsTable: UITableViewController,UIImagePickerControllerDelegate,UINav
             
         }
         if indexPath == NSIndexPath(forItem: 1, inSection: 0) {
-            let photos = prefs.valueForKey("photos") as Bool
+            let photos = prefs.valueForKey("photos") as! Bool
             if !photos {
                 let alert = UIAlertView(title: "", message: "Please purchase photo background upgrade to use this feature.", delegate: self, cancelButtonTitle: "OK")
                 alert.show()
@@ -95,10 +95,10 @@ class SettingsTable: UITableViewController,UIImagePickerControllerDelegate,UINav
             prefs.setValue(false, forKey: "customimage")
                 return
             }
-            println("photo")
+            print("photo")
             
             if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum){
-                println("Button capture")
+                print("Button capture")
                 
                 
                 imagePicker.delegate = self
@@ -113,7 +113,7 @@ class SettingsTable: UITableViewController,UIImagePickerControllerDelegate,UINav
         let prefs = NSUserDefaults.standardUserDefaults()
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             
-            var imageData = UIImagePNGRepresentation(image)
+            let imageData = UIImagePNGRepresentation(image)
             
             prefs.setValue(imageData, forKey: "background")
             
@@ -121,14 +121,14 @@ class SettingsTable: UITableViewController,UIImagePickerControllerDelegate,UINav
         })
         prefs.setValue(true, forKey: "customimage")
         imagePicker.dismissViewControllerAnimated(false, completion: nil)
-        var cell: UITableViewCell = tableView.cellForRowAtIndexPath(NSIndexPath(forItem: 1, inSection: 0))!
+        let cell: UITableViewCell = tableView.cellForRowAtIndexPath(NSIndexPath(forItem: 1, inSection: 0))!
         cell.accessoryType = UITableViewCellAccessoryType.Checkmark
         self.tableView.reloadData()
     }
     override func viewDidAppear(animated: Bool) {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
-            var custombg = userDefaults.objectForKey("customimage") as Bool
+            var custombg = userDefaults.objectForKey("customimage") as! Bool
             if (custombg) {
                 var cell: UITableViewCell = tableView.cellForRowAtIndexPath(NSIndexPath(forItem: 1, inSection: 0))!
                 cell.accessoryType = UITableViewCellAccessoryType.Checkmark

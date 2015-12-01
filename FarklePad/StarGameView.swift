@@ -56,8 +56,8 @@ class StartGameView: UIViewController, UITextFieldDelegate {
         for textbox in playerNames
         {
             if textbox.enabled {
-                if countElements(textbox.text) == 0 {
-                    var alert = UIAlertController(title: "Alert", message: "Each player must have a name.", preferredStyle: UIAlertControllerStyle.Alert)
+                if textbox.text?.characters.count == 0 {
+                    let alert = UIAlertController(title: "Alert", message: "Each player must have a name.", preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
                     break
@@ -73,7 +73,7 @@ class StartGameView: UIViewController, UITextFieldDelegate {
         {
             if textbox.enabled {
                 
-                nameArray.append(textbox.text)
+                nameArray.append(textbox.text!)
                 
             }
         }
@@ -96,8 +96,8 @@ class StartGameView: UIViewController, UITextFieldDelegate {
         
     }
     func textField(textField: UITextField!, shouldChangeCharactersInRange range: NSRange, replacementString string: String!) -> Bool {
-        
-        let newLength = countElements(textField.text!) + countElements(string!) - range.length
+    
+        let newLength = textField.text!.characters.count + string!.characters.count - range.length
         return newLength <= 12 //Bool
         
     }

@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 class photoView: UIImagePickerController {
-    override func supportedInterfaceOrientations() -> Int {
-        return Int(UIInterfaceOrientationMask.Landscape.rawValue)
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.Landscape
     }
     
 }
